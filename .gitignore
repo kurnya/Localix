@@ -1,0 +1,13 @@
+﻿app/
+runtime/
+config/
+data/
+logs/
+www/
+node_modules/
+dist/
+*.asar
+*.exe
+*.blockmap
+package-lock.json
+package.json
