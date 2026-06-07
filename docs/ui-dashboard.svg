@@ -1,72 +1,89 @@
-<svg width="1020" height="669" viewBox="0 0 1020 669" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1020" height="669" rx="2" fill="#F8FAFC"/>
-  <rect width="1020" height="30" fill="#1F1F22"/>
-  <text x="32" y="20" fill="#F8FAFC" font-family="Segoe UI, Arial" font-size="13">Localix</text>
-  <rect x="0" y="30" width="228" height="639" fill="#FFFFFF"/>
-  <line x1="228" y1="30" x2="228" y2="669" stroke="#CBD5E1"/>
-  <rect x="15" y="120" width="200" height="38" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
-  <text x="24" y="143" fill="#0F172A" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Dashboard</text>
-  <text x="24" y="188" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Services</text>
-  <text x="24" y="234" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Projects</text>
-  <text x="24" y="279" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Laravel</text>
-  <text x="24" y="325" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Virtual Hosts</text>
-  <text x="24" y="370" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Settings</text>
-  <text x="24" y="416" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="700">Logs</text>
-  <rect x="15" y="575" width="200" height="78" rx="13" fill="#F1F5F9" stroke="#CBD5E1"/>
-  <text x="24" y="602" fill="#64748B" font-family="Segoe UI, Arial" font-size="11" font-weight="700">GLOBAL STATUS</text>
-  <rect x="24" y="612" width="72" height="29" rx="14.5" fill="#E2E8F0" stroke="#CBD5E1"/>
-  <text x="38" y="632" fill="#94A3B8" font-family="Segoe UI, Arial" font-size="12" font-weight="700">Stopped</text>
-  <rect x="22" y="55" width="43" height="43" rx="10" fill="#38BDF8" fill-opacity=".18"/>
-  <path d="M44 60L61 69V87L44 98L27 88V69L44 60Z" fill="#38BDF8"/>
-  <path d="M44 66L55 72V84L44 91L33 84V72L44 66Z" fill="#0EA5E9"/>
-  <text x="68" y="81" fill="#0F172A" font-family="Segoe UI, Arial" font-size="20" font-weight="800">Localix</text>
-  <rect x="228" y="30" width="792" height="68" fill="#F8FAFC"/>
-  <line x1="228" y1="98" x2="1020" y2="98" stroke="#CBD5E1"/>
-  <text x="252" y="73" fill="#0F172A" font-family="Segoe UI, Arial" font-size="24" font-weight="800">Dashboard</text>
-  <rect x="924" y="51" width="72" height="34" rx="17" fill="#F1F5F9" stroke="#CBD5E1"/>
-  <text x="938" y="73" fill="#CBD5E1" font-family="Segoe UI, Arial" font-size="13" font-weight="800">Stopped</text>
-  <rect x="252" y="120" width="430" height="369" rx="13" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="271" y="161" fill="#0F172A" font-family="Segoe UI, Arial" font-size="22" font-weight="800">Control Panel</text>
-  <rect x="271" y="186" width="392" height="50" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
-  <text x="286" y="218" fill="#0F172A" font-family="Segoe UI, Arial" font-size="16" font-weight="800">Apache</text>
-  <circle cx="511" cy="211" r="6" fill="#94A3B8"/>
-  <text x="525" y="217" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="800">Stopped</text>
-  <text x="626" y="217" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="800">:80</text>
-  <rect x="271" y="247" width="392" height="50" rx="12" fill="#F1F5F9" stroke="#CBD5E1"/>
-  <text x="286" y="279" fill="#0F172A" font-family="Segoe UI, Arial" font-size="16" font-weight="800">MySQL</text>
-  <circle cx="511" cy="272" r="6" fill="#94A3B8"/>
-  <text x="525" y="278" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="800">Stopped</text>
-  <text x="619" y="278" fill="#334155" font-family="Segoe UI, Arial" font-size="14" font-weight="800">:3306</text>
-  <line x1="271" y1="316" x2="663" y2="316" stroke="#CBD5E1"/>
-  <rect x="271" y="333" width="143" height="38" rx="11" fill="#38BDF8"/>
-  <text x="318" y="357" fill="#082F49" font-family="Segoe UI, Arial" font-size="14" font-weight="800">Start All</text>
-  <rect x="424" y="333" width="114" height="38" rx="11" fill="#F8FAFC" stroke="#FCA5A5"/>
-  <text x="465" y="357" fill="#FCA5A5" font-family="Segoe UI, Arial" font-size="14" font-weight="800">Stop</text>
-  <rect x="548" y="333" width="114" height="38" rx="11" fill="#F8FAFC" stroke="#94A3B8"/>
-  <text x="581" y="357" fill="#64748B" font-family="Segoe UI, Arial" font-size="14" font-weight="800">Restart</text>
-  <line x1="271" y1="388" x2="663" y2="388" stroke="#CBD5E1"/>
-  <rect x="271" y="405" width="86" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="285" y="427" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">Localhost</text>
-  <rect x="367" y="405" width="115" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="380" y="427" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">phpMyAdmin</text>
-  <rect x="491" y="405" width="58" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="509" y="427" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">www</text>
-  <rect x="699" y="120" width="298" height="166" rx="13" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="716" y="158" fill="#0F172A" font-family="Segoe UI, Arial" font-size="17" font-weight="800">Ports</text>
-  <text x="716" y="183" fill="#334155" font-family="Segoe UI, Arial" font-size="13">Apache</text>
-  <text x="953" y="183" fill="#0F172A" font-family="Segoe UI, Arial" font-size="13" font-weight="800">:80</text>
-  <line x1="716" y1="195" x2="977" y2="195" stroke="#CBD5E1"/>
-  <text x="716" y="220" fill="#334155" font-family="Segoe UI, Arial" font-size="13">PHP</text>
-  <text x="955" y="220" fill="#0F172A" font-family="Segoe UI, Arial" font-size="13" font-weight="800">8.4</text>
-  <line x1="716" y1="232" x2="977" y2="232" stroke="#CBD5E1"/>
-  <text x="716" y="257" fill="#334155" font-family="Segoe UI, Arial" font-size="13">MySQL</text>
-  <text x="941" y="257" fill="#0F172A" font-family="Segoe UI, Arial" font-size="13" font-weight="800">:3306</text>
-  <rect x="699" y="304" width="298" height="185" rx="13" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="716" y="336" fill="#0F172A" font-family="Segoe UI, Arial" font-size="17" font-weight="800">Quick tools</text>
-  <rect x="716" y="353" width="261" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="814" y="375" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">Open logs</text>
-  <rect x="716" y="396" width="261" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="817" y="418" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">Settings</text>
-  <rect x="716" y="439" width="261" height="34" rx="17" fill="#FFFFFF" stroke="#CBD5E1"/>
-  <text x="789" y="461" fill="#334155" font-family="Segoe UI, Arial" font-size="13" font-weight="800">Advanced services</text>
+<svg width="1280" height="847" viewBox="0 0 1280 847" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="847" rx="6" fill="#F8FAFC"/>
+  <rect width="1280" height="44" fill="#1F1D20"/>
+  <rect x="7" y="15" width="18" height="20" rx="4" fill="#38DDF8"/>
+  <path d="M16 10L28 17V31L16 39L4 31V17L16 10Z" fill="#19D3F3"/>
+  <path d="M16 15L24 20V29L16 34L8 29V20L16 15Z" fill="#0EA5E9"/>
+  <text x="32" y="30" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="15">Localix</text>
+  <line x1="1146" y1="24.5" x2="1158" y2="24.5" stroke="#D1D5DB"/>
+  <rect x="1186" y="19" width="10" height="11" rx="1.5" stroke="#D1D5DB" stroke-width="1.5"/>
+  <path d="M1244 19L1254 29M1254 19L1244 29" stroke="#D1D5DB" stroke-width="1.5" stroke-linecap="round"/>
+
+  <rect y="44" width="284" height="803" fill="#FFFFFF"/>
+  <line x1="284" y1="44" x2="284" y2="847" stroke="#CBD5E1"/>
+  <rect x="16" y="154" width="249" height="49" rx="15" fill="#F1F5F9" stroke="#C7D3E1"/>
+  <text x="30" y="186" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Dashboard</text>
+  <text x="30" y="242" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Services</text>
+  <text x="30" y="299" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Projects</text>
+  <text x="30" y="356" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Laravel</text>
+  <text x="30" y="413" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Virtual Hosts</text>
+  <text x="30" y="469" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Settings</text>
+  <text x="30" y="526" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="800">Logs</text>
+  <rect x="16" y="729" width="249" height="94" rx="16" fill="#F1F5F9" stroke="#C7D3E1"/>
+  <text x="30" y="760" fill="#64748B" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="900">GLOBAL STATUS</text>
+  <rect x="31" y="774" width="91" height="33" rx="16.5" fill="#BBF7D0" stroke="#74D99A"/>
+  <text x="47" y="796" fill="#62EE94" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="900">Running</text>
+
+  <g transform="translate(24 75)">
+    <path d="M24 0L48 14V42L24 58L0 42V14L24 0Z" fill="#22D3EE"/>
+    <path d="M24 8L41 18V38L24 49L7 38V18L24 8Z" fill="#0EA5E9"/>
+    <path d="M24 15L35 22V34L24 41L13 34V22L24 15Z" fill="#075985"/>
+    <path d="M5 47L24 58L43 47" stroke="#67E8F9" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="84" y="107" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="900">Localix</text>
+
+  <rect x="284" y="44" width="996" height="82" fill="#F8FAFC"/>
+  <line x1="284" y1="126" x2="1280" y2="126" stroke="#CBD5E1"/>
+  <text x="315" y="97" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="900">Dashboard</text>
+  <rect x="1158" y="69" width="91" height="33" rx="16.5" fill="#DCFCE7" stroke="#86EFAC"/>
+  <text x="1173" y="91" fill="#62EE94" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="900">Running</text>
+
+  <rect x="315" y="155" width="540" height="464" rx="17" fill="#FFFFFF" stroke="#C7D3E1"/>
+  <text x="338" y="205" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="900">Control Panel</text>
+  <rect x="338" y="236" width="494" height="61" rx="16" fill="#F1F5F9" stroke="#C7D3E1"/>
+  <text x="356" y="276" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="900">Apache</text>
+  <circle cx="642" cy="267" r="8" fill="#22C55E" opacity=".2"/>
+  <circle cx="642" cy="267" r="5" fill="#22C55E"/>
+  <text x="659" y="275" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Running</text>
+  <text x="789" y="275" fill="#64748B" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">:80</text>
+  <rect x="338" y="312" width="494" height="61" rx="16" fill="#F1F5F9" stroke="#C7D3E1"/>
+  <text x="356" y="350" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="900">MySQL</text>
+  <circle cx="642" cy="342" r="8" fill="#22C55E" opacity=".2"/>
+  <circle cx="642" cy="342" r="5" fill="#22C55E"/>
+  <text x="659" y="350" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Running</text>
+  <text x="768" y="350" fill="#64748B" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">:3306</text>
+  <line x1="338" y1="398.5" x2="832" y2="398.5" stroke="#CBD5E1"/>
+  <rect x="338" y="420" width="180" height="46" rx="13" fill="#F8FAFC" stroke="#94A3B8"/>
+  <text x="394" y="449" fill="#8A8F99" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Start All</text>
+  <rect x="531" y="420" width="144" height="46" rx="13" fill="#FEE2E2" stroke="#EF4444"/>
+  <text x="583" y="449" fill="#FCA5A5" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Stop</text>
+  <rect x="687" y="420" width="145" height="46" rx="13" fill="#F8FAFC" stroke="#0F172A"/>
+  <text x="730" y="449" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Restart</text>
+  <line x1="338" y1="486.5" x2="832" y2="486.5" stroke="#CBD5E1"/>
+  <rect x="338" y="507" width="108" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="354" y="535" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Localhost</text>
+  <rect x="458" y="507" width="139" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="474" y="535" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">phpMyAdmin</text>
+  <rect x="610" y="507" width="73" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="632" y="535" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">www</text>
+
+  <rect x="875" y="155" width="375" height="210" rx="17" fill="#FFFFFF" stroke="#C7D3E1"/>
+  <text x="896" y="197" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="900">Ports</text>
+  <text x="896" y="231" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16">Apache</text>
+  <text x="1206" y="231" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">:80</text>
+  <line x1="896" y1="248.5" x2="1228" y2="248.5" stroke="#CBD5E1"/>
+  <text x="896" y="280" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16">PHP</text>
+  <text x="1208" y="280" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">8.4</text>
+  <line x1="896" y1="296.5" x2="1228" y2="296.5" stroke="#CBD5E1"/>
+  <text x="896" y="328" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16">MySQL</text>
+  <text x="1182" y="328" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">:3306</text>
+
+  <rect x="875" y="386" width="375" height="233" rx="17" fill="#FFFFFF" stroke="#C7D3E1"/>
+  <text x="896" y="427" fill="#020617" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="900">Quick tools</text>
+  <rect x="896" y="446" width="333" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="1023" y="475" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Open logs</text>
+  <rect x="896" y="501" width="333" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="1028" y="529" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Settings</text>
+  <rect x="896" y="554" width="333" height="44" rx="22" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="990" y="583" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="900">Advanced services</text>
 </svg>
