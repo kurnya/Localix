@@ -1,57 +1,76 @@
-# Localix - Simple Local Server Manager
+# Localix
 
 ![Localix Logo](build/icon.ico)
 
-## What is Localix?
+Localix is a simple local server manager for Windows. It helps you run Apache, PHP, MySQL, phpMyAdmin, local projects, Virtual Hosts, and Laravel project workflows from one clean desktop app.
 
-Localix is a simple local server manager for Windows. It helps you run Apache, PHP, MySQL, phpMyAdmin, Virtual Hosts, and Laravel projects from one clean desktop control panel.
-
-Localix is designed for local web development. It focuses on simplicity, stability, and a smooth daily workflow, so you can start your local stack without touching complicated configuration files.
-
-Localix does not install MySQL as a Windows Service. Services are managed as local application processes, keeping your system cleaner and easier to control.
-
-Localix is built and developed independently. It may still have limitations, but it will continue to be improved, refined, and updated over time.
-
-Enjoy building locally.
+Localix is built for local web development: start your stack quickly, keep projects in one `www` folder, and manage common server tasks without opening multiple config files.
 
 ![Localix Dashboard](docs/ui-dashboard.svg)
+
+## Download
+
+Download the latest public release here:
+
+https://github.com/kurnya/Localix/releases/latest
+
+Available release files:
+
+- `localix.setup.exe` - standard Windows installer.
+- `localix.0.1.0.x64.exe` - portable Windows build.
+- `Installation.Guide.md` - installation and first-run guide.
+- `SHA256SUMS.txt` - checksum file for verification.
+
+For full setup steps, read:
+
+[Installation Guide](Installation%20Guide.md)
 
 ## Features
 
 **Simple Control Panel**  
-Start, stop, and restart Apache and MySQL from one place.
+Start, stop, and restart Apache and MySQL from one desktop app.
 
-**Local Stack Included**  
-Apache, PHP 8.4, MySQL, phpMyAdmin, and Composer are bundled in the full release.
+**Bundled Local Stack**  
+Apache, PHP 8.4, MySQL, phpMyAdmin, and Composer are included in the release build.
+
+**Clean Localhost Dashboard**  
+The `localhost` page shows Localix branding, server status, ports, phpMyAdmin access, and detected projects.
+
+**Live Project Scanner**  
+Projects inside the `www` folder are scanned while the app is running. The Projects and Virtual Hosts pages update automatically.
 
 **No MySQL Windows Service**  
-MySQL runs as a local Localix process and uses Localix's own data directory.
+MySQL runs as a Localix-managed process and stores data inside the Localix data folder.
 
-**Pretty Local Domains**  
-Use optional `.locx` domains such as:
+**Virtual Hosts**  
+Generate local domains such as:
 
 ```text
 http://my-project.locx
 ```
 
-**Laravel Project Creator**  
-Create new Laravel projects directly from Localix using Composer.
+**Laravel Helper**  
+Create Laravel projects directly from Localix using Composer.
 
-**PHP Version Ready**  
-Localix supports manually adding other PHP versions through the runtime folder.
+**Logs and Maintenance Tools**  
+Open logs, repair phpMyAdmin config, check services, and manage common local-server tasks from the app.
 
-**Isolated Runtime**  
-Runtime files, configs, project files, logs, and MySQL data live inside the Localix folder.
+**Theme Support**  
+Use light, dark, or system theme.
 
-**Tray and Background Mode**  
-Localix can run in the tray and optionally start with Windows in the background.
+## Quick Start
 
-**Light, Dark, and System Theme**  
-Choose the theme that fits your desktop.
+1. Download `localix.setup.exe` from the latest release.
+2. Install and open Localix.
+3. Click `Start All`.
+4. Open:
 
-## How Fast?
+```text
+http://localhost
+http://localhost/phpmyadmin
+```
 
-Localix is built to start your local environment quickly. Apache and MySQL are managed directly by the app, and Localix checks ports before starting services to avoid conflicts with other tools.
+5. Put your projects inside the `www` folder.
 
 Default ports:
 
@@ -60,43 +79,34 @@ Apache: 80
 MySQL: 3306
 ```
 
-If port `80` is already used by IIS, Laragon, XAMPP, Nginx, or another Apache instance, stop the other app or change the Apache port in Settings.
+If port `80` is already used by another app, run Localix as Administrator or change the Apache port in Settings.
 
-## How Easy?
+## Project Folder Rules
 
-Install Localix, open the app, and click:
+- Put project folders directly inside `www`.
+- `phpmyadmin` is reserved and ignored by the project scanner.
+- Laravel projects use the `public` folder automatically when available.
 
-```text
-Start All
-```
-
-Then open:
+Example:
 
 ```text
-http://localhost
-http://localhost/phpmyadmin
-```
-
-For Laravel projects created in the `www` folder, Localix automatically points Apache to the `public/` directory:
-
-```text
-http://localhost/my-project/
+www/my-project -> http://localhost/my-project/
 ```
 
 ## Virtual Hosts
 
-Virtual Hosts are optional and disabled by default.
+Virtual Hosts are optional. When enabled, folders inside `www` can be accessed with `.locx` domains.
 
-When enabled, folders inside `www` can be accessed with `.locx` domains:
+Example:
 
 ```text
-www/ayamgeprek -> http://ayamgeprek.locx
+www/my-project -> http://my-project.locx
 ```
 
-Localix does not edit the Windows hosts file automatically. Add entries manually as Administrator:
+For Virtual Hosts, you may need to add entries to the Windows hosts file:
 
 ```text
-127.0.0.1 ayamgeprek.locx
+127.0.0.1 my-project.locx
 ```
 
 Hosts file location:
@@ -105,24 +115,22 @@ Hosts file location:
 C:\Windows\System32\drivers\etc\hosts
 ```
 
-## Download
+After generating Virtual Host config, restart Apache if it is already running.
 
-Download the latest installer from the **Releases** page:
+## Security Notice
 
-```text
-Localix Setup.exe
-```
+Localix is currently distributed as an unsigned Windows app. Windows SmartScreen or antivirus software may show an unknown publisher warning because the app is new and includes local server binaries.
 
-The installer lets you choose the installation directory.
+Only download Localix from the official GitHub Releases page:
 
-## Notes
+https://github.com/kurnya/Localix/releases
 
-- Localix is for local development, not public production servers.
-- Root MySQL uses no password by default for local development.
-- phpMyAdmin connects to MySQL through `127.0.0.1`.
-- Logs are stored in the Localix logs folder.
-- MySQL data is stored in the Localix data folder.
+You can verify release files with `SHA256SUMS.txt`.
+
+## Public Repository Notice
+
+This repository is for public downloads, documentation, screenshots, checksums, and release notes only. The main source code is not distributed publicly.
 
 ## License
 
-Localix is proprietary software. The public release repository is intended for downloads, documentation, screenshots, and release notes only. Source code is not distributed publicly.
+Localix is proprietary software. Public release assets are provided for installation and documentation purposes.
