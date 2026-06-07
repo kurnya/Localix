@@ -8,7 +8,7 @@ Localix is a simple local server manager for Windows. It helps you run Apache, P
 
 Localix is built for local web development: start your stack quickly, keep projects in one `www` folder, and manage common server tasks without opening multiple config files.
 
-![Localix Dashboard](docs/ui-dashboard.svg)
+![Localix Dashboard](docs/localix-dashboard.png)
 
 ## Download
 
