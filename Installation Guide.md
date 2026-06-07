@@ -67,4 +67,12 @@ Virtual Hosts can generate local domains such as `my-project.locx`.
 
 ## Security Notice
 
-Localix is currently distributed as an unsigned Windows app. Windows SmartScreen may show an unknown publisher warning. Only download Localix from the official GitHub Release page and verify files with `SHA256SUMS.txt` when needed.
+Localix is currently distributed as an unsigned Windows app. Because Localix is a new application and includes local server binaries such as Apache, PHP, MySQL, and phpMyAdmin, Windows SmartScreen or antivirus software may show an unknown publisher warning or ask for extra confirmation before running it.
+
+This warning can happen with new unsigned apps even when the app is intended only for local development. Only download Localix from the official GitHub Release page:
+
+```text
+https://github.com/kurnya/Localix/releases
+```
+
+If needed, verify the downloaded files with `SHA256SUMS.txt` or scan the installer with Windows Security before installing.
