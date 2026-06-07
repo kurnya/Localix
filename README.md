@@ -2,6 +2,8 @@
 
 ![Localix Logo](build/icon.ico)
 
+**Documentation:** [Installation Guide](Installation%20Guide.md) · [Download Latest Release](https://github.com/kurnya/Localix/releases/latest) · [Release Notes](https://github.com/kurnya/Localix/releases)
+
 Localix is a simple local server manager for Windows. It helps you run Apache, PHP, MySQL, phpMyAdmin, local projects, Virtual Hosts, and Laravel project workflows from one clean desktop app.
 
 Localix is built for local web development: start your stack quickly, keep projects in one `www` folder, and manage common server tasks without opening multiple config files.
