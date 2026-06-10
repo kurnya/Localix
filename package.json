@@ -1,0 +1,91 @@
+{
+  "name": "localix",
+  "version": "0.1.0",
+  "description": "localix - Simple Local Server Manager",
+  "main": "app/main.js",
+  "scripts": {
+    "dev": "set ELECTRON_RUN_AS_NODE=&& set ELECTRON_NO_ATTACH_CONSOLE=&& electron .",
+    "start": "set ELECTRON_RUN_AS_NODE=&& set ELECTRON_NO_ATTACH_CONSOLE=&& electron .",
+    "build": "electron-builder --win nsis portable"
+  },
+  "keywords": [
+    "local-server",
+    "apache",
+    "php",
+    "mysql",
+    "phpmyadmin",
+    "electron"
+  ],
+  "author": "localix",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.7.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "dev.localix.app",
+    "productName": "localix",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "app/**/*",
+      "build/icon.ico",
+      "README.md",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "build",
+        "to": "build",
+        "filter": [
+          "icon.ico"
+        ]
+      },
+      {
+        "from": "runtime",
+        "to": "runtime",
+        "filter": [
+          "**/*",
+          "!**/*.pdb",
+          "!**/*.lib"
+        ]
+      },
+      {
+        "from": "config",
+        "to": "config",
+        "filter": [
+          "localix.json"
+        ]
+      },
+      {
+        "from": "www",
+        "to": "www",
+        "filter": [
+          "**/*",
+          "!phpmyadmin/**/*"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "executableName": "localix",
+      "signAndEditExecutable": true,
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "localix ${version} ${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico",
+      "include": "build/installer.nsh",
+      "artifactName": "localix setup.exe"
+    }
+  }
+}
