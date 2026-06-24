@@ -2,6 +2,17 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 const invoke = (channel, payload) => ipcRenderer.invoke(channel, payload);
 
+// Track registered one-time listeners so they are never duplicated across hot reloads.
+const _registeredListeners = {};
+
+function registerListener(channel, wrapper) {
+  if (_registeredListeners[channel]) {
+    ipcRenderer.removeListener(channel, _registeredListeners[channel]);
+  }
+  _registeredListeners[channel] = wrapper;
+  ipcRenderer.on(channel, wrapper);
+}
+
 contextBridge.exposeInMainWorld('localix', {
   startApache: () => invoke('service:startApache'),
   stopApache: () => invoke('service:stopApache'),
@@ -36,19 +47,22 @@ contextBridge.exposeInMainWorld('localix', {
   copyHostsEntry: () => invoke('vhosts:copyHostsEntry'),
   openHostsFile: () => invoke('vhosts:openHostsFile'),
   showHostsFileLocation: () => invoke('vhosts:showHostsFileLocation'),
+
+  // Event listeners — each channel is registered only once; re-registering
+  // replaces the old listener so callbacks never accumulate.
   onStatusChanged: (callback) => {
-    ipcRenderer.on('status:changed', (_event, status) => callback(status));
+    registerListener('status:changed', (_event, status) => callback(status));
   },
   onLogChanged: (callback) => {
-    ipcRenderer.on('logs:changed', () => callback());
+    registerListener('logs:changed', () => callback());
   },
   onLaravelChanged: (callback) => {
-    ipcRenderer.on('laravel:changed', (_event, status) => callback(status));
+    registerListener('laravel:changed', (_event, status) => callback(status));
   },
   onProjectsChanged: (callback) => {
-    ipcRenderer.on('projects:changed', (_event, payload) => callback(payload));
+    registerListener('projects:changed', (_event, payload) => callback(payload));
   },
   onCloseRequested: (callback) => {
-    ipcRenderer.on('app:confirmClose', () => callback());
+    registerListener('app:confirmClose', () => callback());
   }
 });

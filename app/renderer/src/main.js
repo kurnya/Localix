@@ -26,6 +26,9 @@ let laravelState = { running: false, output: '', lastError: '' };
 let showCloseModal = false;
 let openDropdown = '';
 
+// Pending confirm modal state: { title, message, confirmLabel, confirmClass, onConfirm }
+let pendingConfirm = null;
+
 function h(strings, ...values) {
   return strings.reduce((acc, part, index) => `${acc}${part}${values[index] ?? ''}`, '');
 }
@@ -140,9 +143,42 @@ function renderApp() {
       </main>
       <div class="toast-wrap"></div>
       ${renderCloseModal()}
+      ${renderConfirmModal()}
     </div>
   `;
   bindEvents();
+}
+
+function renderConfirmModal() {
+  if (!pendingConfirm) return '';
+  return h`
+    <div class="modal-backdrop">
+      <div class="confirm-modal">
+        <div class="modal-icon">!</div>
+        <div class="modal-copy">
+          <h2>${escapeHtml(pendingConfirm.title)}</h2>
+          <p>${escapeHtml(pendingConfirm.message)}</p>
+        </div>
+        <div class="modal-actions">
+          <button class="btn secondary" data-confirm-choice="cancel">Batal</button>
+          <button class="btn ${escapeHtml(pendingConfirm.confirmClass || 'danger')}" data-confirm-choice="ok">${escapeHtml(pendingConfirm.confirmLabel || 'Ya')}</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function showConfirm({ title, message, confirmLabel = 'Ya', confirmClass = 'danger' }) {
+  return new Promise((resolve) => {
+    pendingConfirm = {
+      title,
+      message,
+      confirmLabel,
+      confirmClass,
+      onConfirm: resolve
+    };
+    renderApp();
+  });
 }
 
 function renderCloseModal() {
@@ -592,6 +628,16 @@ function bindEvents() {
     });
   });
 
+  document.querySelectorAll('[data-confirm-choice]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const choice = button.dataset.confirmChoice;
+      const confirm = pendingConfirm;
+      pendingConfirm = null;
+      renderApp();
+      if (confirm) confirm.onConfirm(choice === 'ok');
+    });
+  });
+
   document.querySelectorAll('[data-action]').forEach((button) => {
     button.addEventListener('click', () => runNamedAction(button.dataset.action, button));
   });
@@ -619,8 +665,26 @@ function runNamedAction(name, source = null) {
     stopMySQL: () => action('MySQL stopped', api.stopMySQL),
     restartMySQL: () => action('MySQL restarted', api.restartMySQL),
     startAll: () => action('All services started', api.startAll),
-    stopAll: () => action('All services stopped', api.stopAll),
-    restartAll: () => action('Services restarted', api.restartAll),
+    stopAll: async () => {
+      const ok = await showConfirm({
+        title: 'Stop semua service?',
+        message: 'Apache dan MySQL akan dihentikan. Project yang sedang berjalan akan terputus.',
+        confirmLabel: 'Stop',
+        confirmClass: 'danger'
+      });
+      if (!ok) return;
+      return action('All services stopped', api.stopAll);
+    },
+    restartAll: async () => {
+      const ok = await showConfirm({
+        title: 'Restart semua service?',
+        message: 'Apache dan MySQL akan di-restart sebentar. Browser mungkin perlu refresh.',
+        confirmLabel: 'Restart',
+        confirmClass: 'secondary'
+      });
+      if (!ok) return;
+      return action('Services restarted', api.restartAll);
+    },
     openLocalhost: () => shortcutGuard(name) && action('Open Localhost', api.openLocalhost, { render: false }),
     openPhpMyAdmin: () => shortcutGuard(name) && action('Open phpMyAdmin', api.openPhpMyAdmin, { render: false }),
     openProject: () => action('Open Project', () => api.openProject(source?.dataset?.project), { render: false }),
@@ -660,8 +724,14 @@ function runNamedAction(name, source = null) {
         'apache-access': 'Apache Access',
         mysql: 'MySQL'
       };
-      const confirmed = window.confirm(`Clear ${labels[logType] || logType} log?`);
-      if (!confirmed) return;
+      const logLabel = labels[logType] || logType;
+      const ok = await showConfirm({
+        title: `Clear ${logLabel} log?`,
+        message: 'Isi log akan dihapus permanen dan tidak bisa dikembalikan.',
+        confirmLabel: 'Clear',
+        confirmClass: 'danger'
+      });
+      if (!ok) return;
       const result = await api.clearLog(logType);
       logText = await api.getLogs(logType);
       renderApp();

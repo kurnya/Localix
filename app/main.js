@@ -162,24 +162,70 @@ function stopProjectWatcher() {
   wwwWatcher = null;
 }
 
-function getPhpRuntime(settings = null) {
-  const merged = settings ? mergeSettings(settings) : defaultSettings;
-  const activeVersion = merged.php.activeVersion || defaultSettings.php.activeVersion;
-  const root = path.join(paths.phpRoot, activeVersion);
+/**
+ * Resolve the thread-safe DLL names for a given PHP root directory.
+ * PHP 7.x uses php7ts.dll / php7apache2_4.dll,
+ * PHP 8.x uses php8ts.dll / php8apache2_4.dll, etc.
+ * Falls back to scanning the directory for any phpNts.dll pattern.
+ */
+function resolvePhpDllNames(root, version) {
+  const major = parseInt(String(version).split('.')[0], 10);
+  if (!Number.isNaN(major) && major >= 1) {
+    const tsDll = `php${major}ts.dll`;
+    const apacheDll = `php${major}apache2_4.dll`;
+    // Confirm at least the ts dll exists; if not, try scanning directory.
+    if (exists(path.join(root, tsDll))) {
+      return { phpTsDll: path.join(root, tsDll), phpApacheDll: path.join(root, apacheDll) };
+    }
+  }
+  // Fallback: scan for any phpNts.dll in the directory.
+  try {
+    const files = fs.readdirSync(root);
+    const tsDllFile = files.find((f) => /^php\d+ts\.dll$/i.test(f));
+    if (tsDllFile) {
+      const detectedMajor = tsDllFile.match(/^php(\d+)ts\.dll$/i)?.[1];
+      const apacheDllFile = `php${detectedMajor}apache2_4.dll`;
+      return {
+        phpTsDll: path.join(root, tsDllFile),
+        phpApacheDll: path.join(root, apacheDllFile)
+      };
+    }
+  } catch {
+    // Directory unreadable — fall through to defaults.
+  }
+  // Last resort: use major version 8 names so the error message remains meaningful.
   return {
-    version: activeVersion,
-    root,
-    phpExe: path.join(root, 'php.exe'),
     phpTsDll: path.join(root, 'php8ts.dll'),
     phpApacheDll: path.join(root, 'php8apache2_4.dll')
   };
 }
 
+function getPhpRuntime(settings = null) {
+  const merged = settings ? mergeSettings(settings) : defaultSettings;
+  const activeVersion = merged.php.activeVersion || defaultSettings.php.activeVersion;
+  const root = path.join(paths.phpRoot, activeVersion);
+  const { phpTsDll, phpApacheDll } = resolvePhpDllNames(root, activeVersion);
+  return {
+    version: activeVersion,
+    root,
+    phpExe: path.join(root, 'php.exe'),
+    phpTsDll,
+    phpApacheDll
+  };
+}
+
 function isValidPhpRuntime(root) {
-  return exists(path.join(root, 'php.exe'))
-    && exists(path.join(root, 'php8ts.dll'))
-    && exists(path.join(root, 'php8apache2_4.dll'))
-    && exists(path.join(root, 'ext'));
+  if (!exists(path.join(root, 'php.exe'))) return false;
+  if (!exists(path.join(root, 'ext'))) return false;
+  // Accept any major-version ts/apache DLL pair.
+  try {
+    const files = fs.readdirSync(root);
+    const hasTsDll = files.some((f) => /^php\d+ts\.dll$/i.test(f));
+    const hasApacheDll = files.some((f) => /^php\d+apache2_4\.dll$/i.test(f));
+    return hasTsDll && hasApacheDll;
+  } catch {
+    return false;
+  }
 }
 
 async function getPhpVersions() {
@@ -247,7 +293,7 @@ async function saveSettingsFile(settings) {
   validatePort(normalized.mysql.port, 'MySQL');
   const phpInfo = getPhpRuntime(normalized);
   if (!isValidPhpRuntime(phpInfo.root)) {
-    throw new Error(`PHP ${normalized.php.activeVersion} tidak valid. Pastikan php.exe, php8ts.dll, php8apache2_4.dll, dan ext/ tersedia.`);
+    throw new Error(`PHP ${normalized.php.activeVersion} tidak valid. Pastikan php.exe, phpNts.dll, phpNapache2_4.dll (N = major version), dan ext/ tersedia.`);
   }
   await fsp.writeFile(paths.settings, JSON.stringify(normalized, null, 2), 'utf8');
   syncLoginItemSettings(normalized);
@@ -483,7 +529,14 @@ async function startApache() {
     }
     log('INFO', `Apache stop exit=${code}`);
   });
-  await wait(800);
+  // Wait for Apache to actually accept connections rather than relying on a
+  // fixed delay. We probe the port for up to 8 seconds, falling back to the
+  // 800 ms heuristic if the process exits before the probe succeeds.
+  const apacheReady = await waitForApacheReady(port, 8000);
+  if (!apacheReady && !apacheProcess) {
+    // Process already exited — error state was set by the exit handler.
+    return { ok: false, message: state.apache.lastError || 'Apache gagal start.', status: getStatus() };
+  }
   if (apacheProcess) state.apache.status = 'Running';
   emitStatus();
   return { ok: true, message: 'Apache berhasil start.', status: getStatus() };
@@ -659,6 +712,17 @@ async function waitForMySQLReady() {
     await wait(1000);
   }
   return { ok: false, message: 'MySQL gagal siap dalam 30 detik. Lihat logs/mysql.log.' };
+}
+
+async function waitForApacheReady(port, timeoutMs = 8000) {
+  const started = Date.now();
+  while (Date.now() - started < timeoutMs) {
+    // If the process died already, stop waiting.
+    if (!apacheProcess) return false;
+    if (await canConnect('127.0.0.1', port)) return true;
+    await wait(200);
+  }
+  return apacheProcess !== null;
 }
 
 function canConnect(host, port) {

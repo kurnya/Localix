@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localix</title>
+  <meta name="description" content="Localix is a lightweight local development environment for Windows. Apache, PHP 8.4, MySQL, and phpMyAdmin in one clean desktop app." />
+  <meta property="og:title" content="Localix" />
+  <meta property="og:description" content="Run Apache, PHP, MySQL and phpMyAdmin locally on Windows with one click." />
+  <meta property="og:image" content="assets/img/logo.png" />
+  <meta name="theme-color" content="#6c63ff" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/translations.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="assets/img/logo.png" alt="Localix" class="logo-img" />
+        <span>Localix</span>
+      </a>
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="active" data-i18n="nav-home">Beranda</a></li>
+        <li><a href="features.html" data-i18n="nav-features">Fitur</a></li>
+        <li><a href="docs.html" data-i18n="nav-docs">Dokumentasi</a></li>
+        <li><a href="changelog.html" data-i18n="nav-changelog">Catatan Rilis</a></li>
+        <li><a href="pricing.html" data-i18n="nav-pricing">Harga</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <div class="lang-dropdown">
+          <button class="lang-select-btn" id="langSelectBtn" aria-label="Language Switcher">
+            <img src="assets/img/flag-id.svg" alt="ID" width="14" height="10" class="lang-flag" id="current-lang-flag" style="border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.1)">
+            <span id="current-lang-text">ID</span>
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button class="lang-item" data-value="id">
+              <img src="assets/img/flag-id.svg" alt="ID" width="14" height="10" style="border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.1)"> ID
+            </button>
+            <button class="lang-item" data-value="en">
+              EN
+            </button>
+          </div>
+        </div>
+        <a href="https://github.com/kurnya/Localix" target="_blank" class="btn btn-ghost btn-sm">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span data-i18n="nav-github">GitHub</span>
+        </a>
+        <a href="https://github.com/kurnya/Localix/releases/latest" class="btn btn-primary btn-sm" data-i18n="nav-download">
+          Unduh
+        </a>
+      </div>
+      <button class="navbar-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html" data-i18n="nav-home">Beranda</a>
+      <a href="features.html" data-i18n="nav-features">Fitur</a>
+      <a href="docs.html" data-i18n="nav-docs">Dokumentasi</a>
+      <a href="changelog.html" data-i18n="nav-changelog">Catatan Rilis</a>
+      <a href="pricing.html" data-i18n="nav-pricing">Harga</a>
+      <a href="https://github.com/kurnya/Localix/releases/latest" class="btn btn-primary btn-sm" style="margin-top:8px;justify-content:center;" data-i18n="nav-download">Unduh</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container">
+    <div class="hero-inner">
+      <h1 data-i18n="hero-title">Stack Dev Lokal Anda,<br /><span>Dibuat dengan Benar</span></h1>
+      <p class="hero-desc" data-i18n="hero-desc">
+        Apache, PHP 8.4, MySQL, dan phpMyAdmin dibundel ke dalam satu aplikasi desktop Windows yang bersih. Tanpa pusing konfigurasi. Tanpa layanan yang mengotori sistem Anda.
+      </p>
+      <div class="hero-actions">
+        <a href="https://github.com/kurnya/Localix/releases/latest" class="btn btn-primary btn-lg">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="hero-download">Unduh untuk Windows</span>
+        </a>
+        <a href="docs.html" class="btn btn-outline btn-lg" data-i18n="hero-view-docs">Lihat Dokumen</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="icon-check">✓</div>
+          <span data-i18n="hero-free">Gratis selamanya</span>
+        </div>
+        <div class="hero-meta-item">
+          <div class="icon-check">✓</div>
+          <span data-i18n="hero-no-setup">Tanpa pengaturan rumit</span>
+        </div>
+        <div class="hero-meta-item">
+          <div class="icon-check">✓</div>
+          <span data-i18n="hero-win">Windows 10 / 11</span>
+        </div>
+        <div class="hero-meta-item">
+          <div class="icon-check">✓</div>
+          <span data-i18n="hero-no-services">Tanpa layanan sistem</span>
+        </div>
+      </div>
+
+      <!-- Screenshot -->
+      <div class="hero-screenshot">
+        <div class="hero-screenshot-wrap">
+          <div class="hero-screenshot-bar">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <img src="assets/img/localix-dashboard.png" alt="Localix Dashboard Screenshot" loading="lazy" />
+          <div class="hero-screenshot-fade"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK BAR -->
+<div class="stack-bar">
+  <div class="container">
+    <div class="stack-bar-inner">
+      <span class="stack-label" data-i18n="stack-label">Dibundel dengan</span>
+      <div class="stack-chips">
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#e34c26"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Apache 2.4
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#777bb4"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          PHP 8.4
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#00758f"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          MySQL 8.x
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#f89820"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          phpMyAdmin
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#6c63ff"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Laravel Helper
+        </div>
+        <div class="stack-divider"></div>
+        <div class="stack-chip">
+          <span class="chip-dot" style="background:#00b894"></span>
+          <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M12 8v4l3 3"/></svg>
+          Composer
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES OVERVIEW -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow" data-i18n="why-localix">Mengapa Localix</p>
+      <h2 class="section-title" data-i18n="features-title">Semua yang Anda butuhkan, tanpa ribet</h2>
+      <p class="section-sub" data-i18n="features-sub">Dibuat untuk pengembang yang menginginkan server lokal yang cepat dan bersih tanpa beban berlebih.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+        <h3 data-i18n="feat-click-title">Mulai dengan Satu Klik</h3>
+        <p data-i18n="feat-click-desc">Jalankan atau hentikan Apache, PHP, dan MySQL bersama-sama atau secara terpisah dari satu panel kontrol.</p>
+      </div>
+      <div class="feature-card accent-green">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><path d="M12 11v6"/><path d="M9 14h6"/></svg>
+        </div>
+        <h3 data-i18n="feat-scanner-title">Pemindai Proyek Langsung</h3>
+        <p data-i18n="feat-scanner-desc">Masukkan folder ke dalam <code>www</code> dan Localix akan mendeteksinya secara otomatis. Tanpa perlu konfigurasi manual.</p>
+      </div>
+      <div class="feature-card accent-blue">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3 data-i18n="feat-vhost-title">Host Virtual</h3>
+        <p data-i18n="feat-vhost-desc">Petakan proyek Anda ke domain <code>.locx</code> yang cantik seperti <code>myapp.locx</code> dalam hitungan detik.</p>
+      </div>
+      <div class="feature-card accent-orange">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
+        </div>
+        <h3 data-i18n="feat-laravel-title">Pembantu Laravel</h3>
+        <p data-i18n="feat-laravel-desc">Buat proyek Laravel baru langsung di dalam Localix menggunakan Composer dengan sekali klik.</p>
+      </div>
+      <div class="feature-card accent-pink">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 data-i18n="feat-noservices-title">Tanpa Layanan Sistem</h3>
+        <p data-i18n="feat-noservices-desc">MySQL berjalan sebagai proses terkelola di dalam Localix. Tidak ada polusi layanan Windows, uninstal bersih.</p>
+      </div>
+      <div class="feature-card accent-yellow">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <h3 data-i18n="feat-theme-title">Tema Terang / Gelap</h3>
+        <p data-i18n="feat-theme-desc">Mendukung tema terang, gelap, dan sistem. Nyaman di mata untuk sesi pengembangan yang panjang.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 48px;">
+      <a href="features.html" class="btn btn-outline" data-i18n="see-all-features">Lihat Semua Fitur →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt" id="how-it-works">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow" data-i18n="quick-start">Memulai Cepat</p>
+      <h2 class="section-title" data-i18n="steps-title">Aktif dan berjalan dalam 4 langkah</h2>
+      <p class="section-sub" data-i18n="steps-sub">Dari pengunduhan hingga localhost dalam waktu kurang dari dua menit.</p>
+    </div>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-marker">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3 data-i18n="step1-title">Unduh</h3>
+          <p data-i18n="step1-desc">Ambil <code>localix.setup.exe</code> atau versi portable dari GitHub Releases.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-marker">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3 data-i18n="step2-title">Pasang</h3>
+          <p data-i18n="step2-desc">Jalankan installer. Tidak memerlukan runtime atau dependensi tambahan.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-marker">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-body">
+          <h3 data-i18n="step3-title">Mulai</h3>
+          <p data-i18n="step3-desc">Klik <strong>Start All</strong> di dasbor. Apache dan MySQL langsung aktif seketika.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-marker">
+          <div class="step-num">4</div>
+        </div>
+        <div class="step-body">
+          <h3 data-i18n="step4-title">Bangun</h3>
+          <p data-i18n="step4-desc">Tempatkan proyek Anda di <code>www/</code> dan buka <code>localhost/proyekanda</code> di peramban.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title" data-i18n="faq-title">Pertanyaan Umum</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q1">Apakah Localix benar-benar gratis?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a1">Ya, sepenuhnya gratis. Tanpa langganan, tanpa fitur premium, tanpa kunci lisensi. Unduh, instal, dan gunakan selamanya tanpa biaya.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q2">Apakah ini menginstal sesuatu ke dalam direktori sistem Windows?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a2">Tidak ada layanan sistem global yang diinstal. Apache dan MySQL berjalan sebagai proses yang dikelola oleh Localix yang berada di dalam folder aplikasi. Menghapus instalasi akan membersihkan semuanya.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q3">Versi Windows mana yang didukung?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a3">Windows 10 dan Windows 11 (64-bit) didukung. Tersedia versi installer maupun portable.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q4">Port 80 sudah digunakan. Apa yang harus saya lakukan?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a4">Anda dapat menjalankan Localix sebagai Administrator, atau mengubah port Apache di panel Pengaturan ke port lain yang tersedia seperti 8080.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q5">Dapatkah saya menggunakan beberapa versi PHP sekaligus?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a5">Rilis saat ini dilengkapi dengan PHP 8.4. Peralihan multi-versi direncanakan untuk rilis mendatang.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span data-i18n="faq-q6">Mengapa Windows SmartScreen memperingatkan tentang installer ini?</span>
+          <span class="faq-chevron">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" data-i18n="faq-a6">Aplikasi saat ini didistribusikan tanpa tanda tangan digital (unsigned). SmartScreen memperingatkan tentang penerbit baru. Anda dapat memverifikasi unduhan menggunakan file SHA256SUMS.txt di halaman rilis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm">
+  <div class="container">
+    <div class="cta-banner">
+      <h2 data-i18n="cta-title">Siap untuk mulai membangun secara lokal?</h2>
+      <p data-i18n="cta-desc">Unduh Localix sekarang. Gratis, portabel, dan siap dalam beberapa menit.</p>
+      <div class="btn-group">
+        <a href="https://github.com/kurnya/Localix/releases/latest" class="btn btn-primary btn-lg">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="cta-download">Unduh Gratis</span>
+        </a>
+        <a href="docs.html" class="btn btn-outline btn-lg" data-i18n="cta-docs">Baca Dokumentasi</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-area">
+          <img src="assets/img/logo.png" alt="Localix" class="logo-img" />
+          <span>Localix</span>
+        </div>
+        <p data-i18n="footer-desc">Pengelola server lokal sederhana untuk pengembang Windows. Apache, PHP, MySQL, semua di satu tempat.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-product">Produk</h4>
+        <ul>
+          <li><a href="features.html" data-i18n="nav-features">Fitur</a></li>
+          <li><a href="changelog.html" data-i18n="nav-changelog">Catatan Rilis</a></li>
+          <li><a href="pricing.html" data-i18n="nav-pricing">Harga</a></li>
+          <li><a href="https://github.com/kurnya/Localix/releases/latest" data-i18n="nav-download">Unduh</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-docs">Dokumentasi</h4>
+        <ul>
+          <li><a href="docs.html" data-i18n="footer-getting-started">Memulai</a></li>
+          <li><a href="docs.html#vhosts" data-i18n="footer-vhosts">Host Virtual</a></li>
+          <li><a href="docs.html#laravel" data-i18n="footer-laravel">Pengaturan Laravel</a></li>
+          <li><a href="docs.html#faq" data-i18n="footer-faq">Tanya Jawab</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-links">Tautan</h4>
+        <ul>
+          <li><a href="https://github.com/kurnya/Localix" target="_blank" data-i18n="nav-github">GitHub</a></li>
+          <li><a href="https://github.com/kurnya/Localix/releases" target="_blank" data-i18n="footer-releases">Rilis</a></li>
+          <li><a href="https://github.com/kurnya/Localix/issues" target="_blank" data-i18n="footer-issues">Masalah</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copyright">© 2025 Localix. Dirilis di bawah Lisensi MIT.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
