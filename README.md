@@ -2,13 +2,13 @@
 
 ![Localix Logo](build/icon.ico)
 
-**Documentation:** [Installation Guide](Installation%20Guide.md) · [Download Latest Release](https://github.com/kurnya/Localix/releases/latest) · [Release Notes](https://github.com/kurnya/Localix/releases)
+**Website:** [www.localix.my.id](https://www.localix.my.id) · **Documentation:** [Installation Guide](docs/installation.md) · [Download Latest Release](https://github.com/kurnya/Localix/releases/latest) · [Release Notes](https://github.com/kurnya/Localix/releases)
 
 Localix is a simple local server manager for Windows. It helps you run Apache, PHP, MySQL, phpMyAdmin, local projects, Virtual Hosts, and Laravel project workflows from one clean desktop app.
 
 Localix is built for local web development: start your stack quickly, keep projects in one `www` folder, and manage common server tasks without opening multiple config files.
 
-![Localix Dashboard](docs/localix-dashboard.png)
+![Localix Dashboard](website/assets/img/localix-dashboard.png)
 
 ## Download
 
@@ -25,7 +25,7 @@ Available release files:
 
 For full setup steps, read:
 
-[Installation Guide](Installation%20Guide.md)
+[Installation Guide](docs/installation.md)
 
 ## Features
 
@@ -129,10 +129,29 @@ https://github.com/kurnya/Localix/releases
 
 You can verify release files with `SHA256SUMS.txt`.
 
-## Public Repository Notice
+## Development
 
-This repository is for public downloads, documentation, screenshots, checksums, and release notes only. The main source code is not distributed publicly.
+Localix is an Electron app. To run it from source you need Node.js and the bundled runtime (Apache, PHP, MySQL, phpMyAdmin, Composer) placed in `runtime/`.
+
+```text
+npm install
+npm run dev
+```
+
+In development mode, settings, databases, projects, and logs are stored in `.dev-data/` so the repository root stays clean.
+
+See [docs/development.md](docs/development.md) for the full setup, runtime versions, and build steps.
+
+## Repository Layout
+
+```text
+app/        Electron main process, preload, and renderer
+build/      App icon and NSIS installer script
+docs/       User and developer documentation
+runtime/    Bundled Apache, PHP, MySQL, phpMyAdmin, Composer (not in Git)
+website/    Source of www.localix.my.id (deployed with GitHub Pages)
+```
 
 ## License
 
-Localix is proprietary software. Public release assets are provided for installation and documentation purposes.
+Localix is released under the [MIT License](LICENSE). Bundled third-party components keep their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
