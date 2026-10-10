@@ -19,8 +19,7 @@ https://github.com/kurnya/Localix/releases/latest
 Available release files:
 
 - `localix.setup.exe` - standard Windows installer.
-- `localix.0.1.0.x64.exe` - portable Windows build.
-- `Installation.Guide.md` - installation and first-run guide.
+- `localix.<version>.x64.exe` - portable Windows build.
 - `SHA256SUMS.txt` - checksum file for verification.
 
 For full setup steps, read:

@@ -2,6 +2,35 @@
 
 All notable changes to Localix are documented in this file.
 
+## [0.2.0] - 2026-10-10
+
+Manage PHP versions, PHP extensions, and phpMyAdmin from inside Localix, with a simpler five-page layout.
+
+### New
+
+- PHP page: install, update, and switch PHP 8.2-8.5 and phpMyAdmin from inside the app. Files come from the official sites and are verified with SHA-256.
+- Switch PHP from the dashboard or the tray menu; the previous version is restored if Apache fails to start.
+- PHP extensions and php.ini settings with checkboxes, plus custom directives that are tested before they are applied.
+- Simpler navigation: Dashboard, Projects, PHP, Logs, Settings.
+
+### Improvements
+
+- Updating keeps projects (`www`), databases (`data`), and settings (`config`), including when updating from 0.1.0.
+- phpMyAdmin is served from its runtime folder, keeps the login across updates, and only opens on `localhost` / `127.0.0.1`.
+- Per-service start, stop, and restart on the dashboard; Check Ports detects ports used by other applications.
+
+### Fixes
+
+- New Laravel projects returned HTTP 500 (SQLite extensions were not enabled).
+- The Apache access log only contained the word `common`.
+- Status badges were hard to read in the light theme.
+
+### Release Assets
+
+- `localix.setup.exe` - standard Windows installer.
+- `localix.0.2.0.x64.exe` - portable Windows build.
+- `SHA256SUMS.txt` - checksum file for release verification.
+
 ## [0.1.0] - 2026-06-07
 
 Localix is a simple local server manager for Windows, built to make Apache, PHP, MySQL, phpMyAdmin, local projects, and Virtual Hosts easier to run from one desktop app.
@@ -26,4 +55,5 @@ Localix is a simple local server manager for Windows, built to make Apache, PHP,
 - `Installation Guide.md` - installation and first-run guide.
 - `SHA256SUMS.txt` - checksum file for release verification.
 
+[0.2.0]: https://github.com/kurnya/Localix/releases/tag/v0.2.0
 [0.1.0]: https://github.com/kurnya/Localix/releases/tag/v0.1.0

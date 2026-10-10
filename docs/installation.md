@@ -13,7 +13,7 @@ Localix is a simple local server manager for Windows. It bundles Apache, PHP, My
 Download one of these files from the latest GitHub Release:
 
 - `localix.setup.exe` for the standard installer.
-- `localix.0.1.0.x64.exe` for the portable build.
+- `localix.<version>.x64.exe` (for example `localix.0.2.0.x64.exe`) for the portable build.
 
 Release page:
 
@@ -30,7 +30,7 @@ https://github.com/kurnya/Localix/releases/latest
 
 ## Use Portable Build
 
-1. Run `localix.0.1.0.x64.exe`.
+1. Run `localix.<version>.x64.exe`.
 2. Choose or keep the default extraction location.
 3. Open Localix from the portable output.
 
