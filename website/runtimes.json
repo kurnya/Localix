@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "updated": "2026-10-10",
+  "allowedHosts": [
+    "windows.php.net",
+    "files.phpmyadmin.net"
+  ],
+  "php": [
+    {
+      "version": "8.5.11",
+      "folder": "8.5",
+      "url": "https://windows.php.net/downloads/releases/php-8.5.11-Win32-vs17-x64.zip",
+      "fallbackUrls": [
+        "https://windows.php.net/downloads/releases/archives/php-8.5.11-Win32-vs17-x64.zip"
+      ],
+      "sha256": "c83d5a1e0d760fb026ce695d8a70a73a4c81ac224b3e5c425406b23a7d53e1de",
+      "size": 36180745,
+      "eol": "2029-12-31",
+      "recommended": false
+    },
+    {
+      "version": "8.4.26",
+      "folder": "8.4",
+      "url": "https://windows.php.net/downloads/releases/php-8.4.26-Win32-vs17-x64.zip",
+      "fallbackUrls": [
+        "https://windows.php.net/downloads/releases/archives/php-8.4.26-Win32-vs17-x64.zip"
+      ],
+      "sha256": "6e56f0e932e92bfdce208d3a7e6068f6e2f7a19fc2922a5f856fb085f61673f3",
+      "size": 35138257,
+      "eol": "2028-12-31",
+      "recommended": true
+    },
+    {
+      "version": "8.3.35",
+      "folder": "8.3",
+      "url": "https://windows.php.net/downloads/releases/php-8.3.35-Win32-vs16-x64.zip",
+      "fallbackUrls": [
+        "https://windows.php.net/downloads/releases/archives/php-8.3.35-Win32-vs16-x64.zip"
+      ],
+      "sha256": "b454bed828a74536125d8a96119eae8ffbb186b305759dd6cf8d9bb4b55968b1",
+      "size": 34024606,
+      "eol": "2027-12-31",
+      "recommended": false
+    },
+    {
+      "version": "8.2.34",
+      "folder": "8.2",
+      "url": "https://windows.php.net/downloads/releases/php-8.2.34-Win32-vs16-x64.zip",
+      "fallbackUrls": [
+        "https://windows.php.net/downloads/releases/archives/php-8.2.34-Win32-vs16-x64.zip"
+      ],
+      "sha256": "6df2a5f59f10f08022bede47a26d61c3c16756c54d86aad58503dc8a9d3c25ad",
+      "size": 33585038,
+      "eol": "2026-12-31",
+      "recommended": false
+    }
+  ],
+  "phpmyadmin": [
+    {
+      "version": "5.2.3",
+      "folder": "5.2.3",
+      "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.3/phpMyAdmin-5.2.3-all-languages.zip",
+      "fallbackUrls": [],
+      "sha256": "2d2e13c735366d318425c78e4ee2cc8fc648d77faba3ddea2cd516e43885733f",
+      "size": 16431330,
+      "testedPhp": [
+        "8.2",
+        "8.3",
+        "8.4",
+        "8.5"
+      ],
+      "recommended": true
+    }
+  ]
+}
