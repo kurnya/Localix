@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Localix</title>
-  <meta name="description" content="Localix is a lightweight local development environment for Windows. Apache, PHP 8.4, MySQL, and phpMyAdmin in one clean desktop app." />
+  <meta name="description" content="Localix is a lightweight local development environment for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app." />
   <link rel="icon" href="assets/img/favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/img/logo.png" />
   <link rel="apple-touch-icon" href="assets/img/logo.png" />
   <meta property="og:title" content="Localix" />
-  <meta property="og:description" content="Localix is a lightweight local development environment for Windows. Apache, PHP 8.4, MySQL, and phpMyAdmin in one clean desktop app." />
+  <meta property="og:description" content="Localix is a lightweight local development environment for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app." />
   <meta property="og:image" content="https://www.localix.my.id/assets/img/logo.png" />
   <meta property="og:url" content="https://www.localix.my.id/" />
   <meta property="og:type" content="website" />
@@ -22,7 +22,7 @@
     "@type": "WebSite",
     "name": "Localix",
     "url": "https://www.localix.my.id/",
-    "description": "Localix is a lightweight local development environment for Windows. Apache, PHP 8.4, MySQL, and phpMyAdmin in one clean desktop app.",
+    "description": "Localix is a lightweight local development environment for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app.",
     "publisher": {
       "@type": "Organization",
       "name": "Localix",
@@ -116,7 +116,7 @@
     <div class="hero-inner">
       <h1 data-i18n="hero-title">Stack Dev Lokal Anda,<br /><span>Dibuat dengan Benar</span></h1>
       <p class="hero-desc" data-i18n="hero-desc">
-        Apache, PHP 8.4, MySQL, dan phpMyAdmin dibundel ke dalam satu aplikasi desktop Windows yang bersih. Tanpa pusing konfigurasi. Tanpa layanan yang mengotori sistem Anda.
+        Apache, PHP 8.2–8.5, MySQL, dan phpMyAdmin terintegrasi dalam satu aplikasi desktop Windows yang bersih. Ganti versi PHP dengan sekali klik, tanpa pusing konfigurasi dan tanpa service latar belakang yang membebani sistem Anda.
       </p>
       <div class="hero-actions">
         <a href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe" download class="btn btn-primary btn-lg">
@@ -175,13 +175,13 @@
         <div class="stack-chip">
           <span class="chip-dot" style="background:#777bb4"></span>
           <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          PHP 8.4
+          PHP 8.2 – 8.5
         </div>
         <div class="stack-divider"></div>
         <div class="stack-chip">
           <span class="chip-dot" style="background:#00758f"></span>
           <svg class="chip-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-          MySQL 8.x
+          MySQL 9.6
         </div>
         <div class="stack-divider"></div>
         <div class="stack-chip">
@@ -252,10 +252,10 @@
       </div>
       <div class="feature-card accent-yellow">
         <div class="feature-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
         </div>
-        <h3 data-i18n="feat-theme-title">Tema Terang / Gelap</h3>
-        <p data-i18n="feat-theme-desc">Mendukung tema terang, gelap, dan sistem. Nyaman di mata untuk sesi pengembangan yang panjang.</p>
+        <h3 data-i18n="feat-php-title">Ganti Versi PHP</h3>
+        <p data-i18n="feat-php-desc">Pasang PHP 8.2 sampai 8.5 dari aplikasi dan ganti versi lewat dasbor atau menu tray. Extension dan <code>php.ini</code> cukup diatur dengan centang.</p>
       </div>
     </div>
     <div class="text-center" style="margin-top: 48px;">
@@ -362,12 +362,12 @@
       </div>
       <div class="faq-item">
         <button class="faq-question">
-          <span data-i18n="faq-q5">Dapatkah saya menggunakan beberapa versi PHP sekaligus?</span>
+          <span data-i18n="faq-q5">Apakah saya bisa memakai beberapa versi PHP?</span>
           <span class="faq-chevron">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
           </span>
         </button>
-        <div class="faq-answer" data-i18n="faq-a5">Rilis saat ini dilengkapi dengan PHP 8.4. Peralihan multi-versi direncanakan untuk rilis mendatang.</div>
+        <div class="faq-answer" data-i18n="faq-a5">Bisa. Sejak v0.2.0, Anda dapat memasang PHP 8.2 sampai 8.5 dari halaman PHP dan berganti versi lewat dasbor atau menu tray. PHP 8.4 sudah disertakan sejak awal. Satu versi aktif dalam satu waktu.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question">

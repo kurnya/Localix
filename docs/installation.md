@@ -52,17 +52,28 @@ https://github.com/kurnya/Localix/releases/latest
 
 Virtual Hosts can generate local domains such as `my-project.locx`.
 
-1. Open the `Virtual Hosts` menu.
-2. Enable Virtual Host.
-3. Generate the config.
-4. Restart Apache if it is already running.
-5. Update the Windows hosts file when prompted or copy the generated hosts entries manually.
+1. Open the `Projects` page.
+2. Turn on `Virtual host`, keep or change the suffix, and click `Simpan`.
+3. Click `Copy hosts entry` (or `Buka hosts file`) and paste the entries into the Windows hosts file.
+4. If a new project's domain is missing, click `Regenerate`.
+
+## PHP Versions
+
+PHP 8.4 is included. PHP 8.2, 8.3, and 8.5 can be installed from the app.
+
+1. Open the `PHP` page.
+2. On the `Versi` tab, click `Install` next to the version you want, then `Aktifkan`.
+3. You can also switch the active version from the dashboard or the tray menu.
+4. Use the `Extensions` and `Pengaturan` tabs to change extensions and `php.ini` settings, then click `Simpan & terapkan`.
+
+Updating Localix keeps your projects (`www`), databases (`data`), and settings (`config`).
 
 ## Troubleshooting
 
 - If Apache cannot start on port `80`, run Localix as Administrator or change the Apache port in Settings.
 - If MySQL cannot start, check whether another MySQL service is already using port `3306`.
-- If a new Virtual Host domain does not work, regenerate config and restart Apache.
+- If a new Virtual Host domain does not work, click `Regenerate` on the Projects page and check the hosts file entry.
+- If Apache fails to start after switching PHP versions, Localix restores the previous version. Check the PHP Error and Apache Error logs on the Logs page.
 - If the localhost logo does not appear after an update, restart Apache so the generated Apache alias is active.
 
 ## Security Notice

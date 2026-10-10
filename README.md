@@ -32,13 +32,19 @@ For full setup steps, read:
 Start, stop, and restart Apache and MySQL from one desktop app.
 
 **Bundled Local Stack**  
-Apache, PHP 8.4, MySQL, phpMyAdmin, and Composer are included in the release build.
+Apache 2.4, PHP 8.4, MySQL 9.6, phpMyAdmin, and Composer are included in the release build.
+
+**PHP Version Manager**  
+Install, update, and switch PHP 8.2 to 8.5 and phpMyAdmin from the PHP page. Downloads come from the official sites and are verified with SHA-256. Switch the active PHP version from the dashboard or the tray menu.
+
+**PHP Extensions and php.ini**  
+Toggle extensions and edit common `php.ini` settings with checkboxes. Custom directives are tested before they are applied.
 
 **Clean Localhost Dashboard**  
 The `localhost` page shows Localix branding, server status, ports, phpMyAdmin access, and detected projects.
 
 **Live Project Scanner**  
-Projects inside the `www` folder are scanned while the app is running. The Projects and Virtual Hosts pages update automatically.
+Projects inside the `www` folder are scanned while the app is running. The Projects page updates automatically.
 
 **No MySQL Windows Service**  
 MySQL runs as a Localix-managed process and stores data inside the Localix data folder.
@@ -54,7 +60,7 @@ http://my-project.locx
 Create Laravel projects directly from Localix using Composer.
 
 **Logs and Maintenance Tools**  
-Open logs, repair phpMyAdmin config, check services, and manage common local-server tasks from the app.
+View Localix, Apache, MySQL, and PHP logs. Check ports, repair the phpMyAdmin config, and reinitialize MySQL data from Settings.
 
 **Theme Support**  
 Use light, dark, or system theme.
@@ -96,7 +102,7 @@ www/my-project -> http://localhost/my-project/
 
 ## Virtual Hosts
 
-Virtual Hosts are optional. When enabled, folders inside `www` can be accessed with `.locx` domains.
+Virtual Hosts are optional. Turn on `Virtual host` on the Projects page and folders inside `www` can be accessed with `.locx` domains.
 
 Example:
 
@@ -104,7 +110,7 @@ Example:
 www/my-project -> http://my-project.locx
 ```
 
-For Virtual Hosts, you may need to add entries to the Windows hosts file:
+Add the entries to the Windows hosts file (use `Copy hosts entry` or `Buka hosts file` on the Projects page):
 
 ```text
 127.0.0.1 my-project.locx
@@ -116,7 +122,7 @@ Hosts file location:
 C:\Windows\System32\drivers\etc\hosts
 ```
 
-After generating Virtual Host config, restart Apache if it is already running.
+If a new project's domain is missing, click `Regenerate` on the Projects page.
 
 ## Security Notice
 
