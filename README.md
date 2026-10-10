@@ -40,6 +40,9 @@ Install, update, and switch PHP 8.2 to 8.5 and phpMyAdmin from the PHP page. Dow
 **PHP Extensions and php.ini**  
 Toggle extensions and edit common `php.ini` settings with checkboxes. Custom directives are tested before they are applied.
 
+**PHP in the Terminal (optional)**  
+Add the active PHP and Composer to the Windows PATH so `php artisan` and `composer` use the same version and settings as Localix.
+
 **Clean Localhost Dashboard**  
 The `localhost` page shows Localix branding, server status, ports, phpMyAdmin access, and detected projects.
 

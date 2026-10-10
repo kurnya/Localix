@@ -221,6 +221,11 @@ www/portfolio    →  http://localhost/portfolio/</code></pre></div>
         <li>Click <b>Buat project</b>. Localix runs <code>composer create-project laravel/laravel</code> with its bundled PHP and Composer.</li>
         <li>When it finishes, the project appears on the Projects page (with a <code>.locx</code> domain if Virtual Hosts is on).</li>
       </ol>
+      <h3>Artisan and Composer in the terminal</h3>
+      <p>Turn on <a href="#php-terminal">PHP in the terminal</a>, open a new terminal, then run commands from the project folder as usual:</p>
+      <div class="code"><div class="code-title">Terminal</div><pre><code>cd C:\localix\www\my-store
+php artisan migrate
+composer require laravel/breeze --dev</code></pre></div>
       <div class="callout callout-tip"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg><div>Laravel's default <code>.env</code> database settings match Localix: <code>DB_HOST=127.0.0.1</code>, <code>DB_PORT=3306</code>, <code>DB_USERNAME=root</code>, <code>DB_PASSWORD=</code> (empty).</div></div>
     </section>
 
@@ -240,6 +245,9 @@ www/portfolio    →  http://localhost/portfolio/</code></pre></div>
       <p><code>mysqli</code>, <code>mbstring</code>, <code>openssl</code>, and <code>pdo_sqlite</code> are always on and cannot be turned off.</p>
       <h3>Settings (<b>Pengaturan</b>)</h3>
       <p>Set memory limit, upload size, max execution time, timezone, showing errors in the browser, and OPcache, then click <b>Simpan &amp; terapkan</b>. Localix tests the new <code>config/php.ini</code> before applying it. Extra lines go in <b>Custom directives</b>. Use <b>Lihat php.ini</b> to view the result or <b>Kembalikan default</b> to start over.</p>
+      <h3 id="php-terminal">PHP in the terminal</h3>
+      <p>On the <b>Pengaturan</b> tab, turn on <b>Pakai PHP Localix di terminal</b> (use Localix PHP in the terminal). Localix adds the active PHP and Composer to your Windows user PATH, so <code>php</code>, <code>php artisan</code>, and <code>composer</code> in the terminal use the same version and <code>php.ini</code> settings as Localix. When you switch PHP versions, the PATH follows.</p>
+      <div class="callout callout-info"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div>Open a new terminal (or restart VS Code) after turning it on. If another PHP is on the system PATH, it takes priority and Localix shows a warning. Turn the switch off to restore your PATH.</div></div>
     </section>
 
     <section id="phpmyadmin">
@@ -324,6 +332,10 @@ www/portfolio    →  http://localhost/portfolio/</code></pre></div>
         <details>
           <summary>Can I use multiple PHP versions?</summary>
           <p>Yes. PHP 8.4 is included, and 8.2, 8.3, or 8.5 can be installed from the PHP page. One version is active at a time.</p>
+        </details>
+        <details>
+          <summary>Can I run <code>php</code> and <code>composer</code> from a terminal?</summary>
+          <p>Yes, after turning on <a href="#php-terminal">PHP in the terminal</a> on the PHP page.</p>
         </details>
         <details>
           <summary>Does Localix install Windows services?</summary>

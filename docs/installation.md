@@ -65,6 +65,7 @@ PHP 8.4 is included. PHP 8.2, 8.3, and 8.5 can be installed from the app.
 2. On the `Versi` tab, click `Install` next to the version you want, then `Aktifkan`.
 3. You can also switch the active version from the dashboard or the tray menu.
 4. Use the `Extensions` and `Pengaturan` tabs to change extensions and `php.ini` settings, then click `Simpan & terapkan`.
+5. (Optional) On the `Pengaturan` tab, turn on `Pakai PHP Localix di terminal` to add the active PHP and Composer to the Windows PATH. Open a new terminal afterwards so `php artisan` and `composer` use Localix's PHP.
 
 Updating Localix keeps your projects (`www`), databases (`data`), and settings (`config`).
 
