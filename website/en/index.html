@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localix · Local server for Windows</title>
+  <meta name="description" content="Localix is a local server for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app." />
+  <link rel="canonical" href="https://www.localix.my.id/en/" />
+  <link rel="alternate" hreflang="id" href="https://www.localix.my.id/" />
+  <link rel="alternate" hreflang="en" href="https://www.localix.my.id/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.localix.my.id/" />
+  <link rel="icon" href="../assets/img/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/logo.png" />
+  <link rel="apple-touch-icon" href="../assets/img/logo.png" />
+  <meta property="og:title" content="Localix · Local server for Windows" />
+  <meta property="og:description" content="Localix is a local server for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app." />
+  <meta property="og:image" content="https://www.localix.my.id/assets/img/logo.png" />
+  <meta property="og:url" content="https://www.localix.my.id/en/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <script type="application/ld+json">
+  [{"@context": "https://schema.org", "@type": "WebSite", "name": "Localix", "url": "https://www.localix.my.id/en/", "inLanguage": "en", "description": "Localix is a local server for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app.", "publisher": {"@type": "Organization", "name": "Localix", "url": "https://www.localix.my.id/", "logo": {"@type": "ImageObject", "url": "https://www.localix.my.id/assets/img/logo.png", "width": 256, "height": 256}}}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Localix", "operatingSystem": "Windows 10, Windows 11", "applicationCategory": "DeveloperApplication", "softwareVersion": "0.2.0", "downloadUrl": "https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Localix is a local server for Windows. Apache, PHP 8.2–8.5, MySQL, and phpMyAdmin in one clean desktop app."}]
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/site.css" />
+  <script>
+    try { var t = localStorage.getItem('localix_theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LCL2V1DH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F9LCL2V1DH');
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="./" class="brand"><img src="../assets/img/logo.png" alt="" width="30" height="30" />Localix</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#tur">Features</a></li>
+      <li><a href="index.html#php">PHP</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="changelog.html">Changelog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a class="lang-opt" href="../" hreflang="id" lang="id" title="Bahasa Indonesia">ID</a><span class="lang-opt" aria-current="true" title="English">EN</span>
+      </div>
+      <a class="icon-btn nav-github" href="https://github.com/kurnya/Localix" target="_blank" rel="noopener" aria-label="GitHub"><svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+        <svg class="theme-icon-light" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon-dark" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm nav-download" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe">Download</a>
+      <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <a class="release-pill" href="changelog.html">
+        <span class="tag">v0.2.0</span>
+        Manage PHP 8.2–8.5 right inside the app
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <h1>A Windows local server<br />that <span class="hl">just works</span>.</h1>
+      <p class="hero-sub">Apache, PHP, MySQL, and phpMyAdmin in one desktop app. Drop your project into the <code>www</code> folder, click <b>Start All</b>, and start coding.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download for Windows</a>
+        <a class="btn btn-lg" href="https://github.com/kurnya/Localix/releases/latest" target="_blank" rel="noopener">Portable build</a>
+      </div>
+      <p class="hero-meta">v0.2.0 · Windows 10 / 11 · 64-bit · Free</p>
+    </div>
+    <div class="hero-shot">
+      <img src="../assets/img/localix-dashboard.png" width="1028" height="671" alt="Localix dashboard: Apache and MySQL, PHP version picker, and shortcuts to Localhost, phpMyAdmin, and the www folder" />
+    </div>
+  </div>
+</header>
+
+<div class="stack">
+  <div class="container stack-inner">
+    <span class="stack-item"><span class="dot" style="background:#d22128"></span><b>Apache</b> 2.4</span>
+    <span class="stack-item"><span class="dot" style="background:#777bb4"></span><b>PHP</b> 8.2 – 8.5</span>
+    <span class="stack-item"><span class="dot" style="background:#00758f"></span><b>MySQL</b> 9.6</span>
+    <span class="stack-item"><span class="dot" style="background:#f89820"></span><b>phpMyAdmin</b> 5.2</span>
+    <span class="stack-item"><span class="dot" style="background:#885630"></span><b>Composer</b> 2.9</span>
+  </div>
+</div>
+
+<section class="section" id="tur">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Quick tour</p>
+      <h2 class="section-title">Everything you need, in one window</h2>
+      <p class="section-sub">Five pages, no confusing menus: Dashboard, Projects, PHP, Logs, and Settings.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Localix features">
+      <button class="tab" role="tab" id="tab-dashboard" aria-controls="panel-dashboard" aria-selected="true">Dashboard</button>
+      <button class="tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="false" tabindex="-1">Projects</button>
+      <button class="tab" role="tab" id="tab-vhost" aria-controls="panel-vhost" aria-selected="false" tabindex="-1">Virtual Host</button>
+      <button class="tab" role="tab" id="tab-laravel" aria-controls="panel-laravel" aria-selected="false" tabindex="-1">Laravel</button>
+    </div>
+
+    <div class="tour-panel" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
+      <div>
+        <h3>One click for the whole server</h3>
+        <p>Start Apache and MySQL together or one at a time. Status and ports are always visible, no terminal needed.</p>
+        <ul class="check-list">
+          <li>Start, Stop, and Restart each service or all at once</li>
+          <li>Switch PHP versions from the dashboard or the tray menu</li>
+          <li>Shortcuts to Localhost, phpMyAdmin, and the <code>www</code> folder</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="../assets/img/panel.png" width="488" height="409" alt="Services panel: Apache on port 80 and MySQL on port 3306 with Start All, Stop All, and Restart All buttons" loading="lazy" /></div>
+    </div>
+
+    <div class="tour-panel" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects" hidden>
+      <div>
+        <h3>Projects are detected automatically</h3>
+        <p>Every folder in <code>www</code> shows up on the Projects page with its URL and folder. Nothing to register.</p>
+        <ul class="check-list">
+          <li>Folders are scanned while the app runs</li>
+          <li>Laravel projects are served from <code>public</code> automatically</li>
+          <li><b>Open</b> button to launch a project in the browser</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="../assets/img/laravel-scanner.png" width="766" height="280" alt="Projects page listing three projects with .locx URLs and public folders" loading="lazy" /></div>
+    </div>
+
+    <div class="tour-panel" role="tabpanel" id="panel-vhost" aria-labelledby="tab-vhost" hidden>
+      <div>
+        <h3>Clean local domains</h3>
+        <p>Turn on Virtual Hosts and every project gets its own domain, such as <code>shop.locx</code>. Localix writes the Apache config for you.</p>
+        <ul class="check-list">
+          <li>Change the domain suffix (default <code>.locx</code>)</li>
+          <li><b>Copy hosts entry</b> copies every entry at once</li>
+          <li><b>Regenerate</b> when you add a project</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="../assets/img/vhost.png" width="767" height="206" alt="Virtual host settings with the .locx suffix and a list of hosts entries" loading="lazy" /></div>
+    </div>
+
+    <div class="tour-panel" role="tabpanel" id="panel-laravel" aria-labelledby="tab-laravel" hidden>
+      <div>
+        <h3>A new Laravel project in one step</h3>
+        <p>Click <b>+ Laravel</b>, enter a project name, then <b>Buat project</b>. Localix runs Composer with its bundled PHP, so there is nothing to install on Windows.</p>
+        <ul class="check-list">
+          <li>Composer is included</li>
+          <li>Pick the project location with <b>Browse</b></li>
+          <li>Shows up in Projects as soon as it's done</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="../assets/img/create-laravel-project.png" width="758" height="379" alt="Create Laravel project form with project name and location" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="php">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">New in v0.2.0</p>
+      <h2 class="section-title">Pick the PHP version each project needs</h2>
+      <p class="section-sub">Install, update, and switch versions from the PHP page. Files come from the official PHP site and are checked with SHA-256 before use. If Apache fails to start, the previous version is restored automatically.</p>
+    </div>
+    <div class="php-grid" id="phpGrid" data-manifest="../runtimes.json" aria-live="polite"></div>
+    <noscript><p class="php-note">PHP 8.2, 8.3, 8.4 (bundled), and 8.5 are available.</p></noscript>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">And also</p>
+      <h2 class="section-title">Small things that make life easier</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Extensions &amp; php.ini as checkboxes</h3>
+        <p>Toggle extensions and set memory limit, uploads, timezone, and OPcache. Changes are tested before they are applied.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div>
+        <h3>Logs in one place</h3>
+        <p>Read and clear the Localix, Apache, MySQL, and PHP logs from the Logs page.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Updates keep your data</h3>
+        <p>Projects (<code>www</code>), databases (<code>data</code>), and settings (<code>config</code>) stay safe when you update Localix.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Check Ports</h3>
+        <p>Port 80 taken by another app? Settings shows which ports are in use, and you can change the Apache and MySQL ports.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>No Windows services</h3>
+        <p>Apache and MySQL run as Localix processes, not system services. Nothing is left behind in Windows.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Installer or portable</h3>
+        <p>Use the regular installer, or run the portable build from any folder, including a USB drive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="xampp">
+  <div class="container migrate">
+    <div class="section-head" style="margin-bottom:0">
+      <p class="eyebrow">Coming from XAMPP?</p>
+      <h2 class="section-title">Move to Localix in five minutes</h2>
+      <p class="section-sub">The folder layout is similar. Only where projects live and how you manage the server change.</p>
+    </div>
+    <ol class="steps">
+      <li><div><b>Export your databases</b><span>In XAMPP's phpMyAdmin, export your databases as <code>.sql</code> files.</span></div></li>
+      <li><div><b>Copy your projects</b><span>Move folders from <code>htdocs</code> into the Localix <code>www</code> folder.</span></div></li>
+      <li><div><b>Stop XAMPP</b><span>Stop XAMPP's Apache and MySQL so ports 80 and 3306 are free.</span></div></li>
+      <li><div><b>Start All and import</b><span>Start Localix, open phpMyAdmin, and import the <code>.sql</code> files.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="trust">
+      <div>
+        <p class="eyebrow">Transparent</p>
+        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,1.9rem)">Why does Windows show a warning?</h2>
+        <p class="section-sub">Localix is not signed with a paid certificate yet, so SmartScreen may show "Windows protected your PC". Click <b>More info</b>, then <b>Run anyway</b>.</p>
+        <p class="section-sub">Only download from <a href="https://github.com/kurnya/Localix/releases" target="_blank" rel="noopener">GitHub Releases</a>, and check the file against <code>SHA256SUMS.txt</code>.</p>
+      </div>
+      <div class="terminal" role="img" aria-label="Example checksum verification command in PowerShell">
+        <div class="c"># PowerShell, in your Downloads folder</div>
+        <div><span class="p">PS&gt;</span> Get-FileHash .\localix.setup.exe</div>
+        <div class="c"># Compare the Hash with the matching line</div>
+        <div class="c"># in SHA256SUMS.txt on the release page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is Localix really free?</summary>
+        <p>Yes. No subscription, no premium tier, no paid license.</p>
+      </details>
+      <details>
+        <summary>Which Windows versions are supported?</summary>
+        <p>Windows 10 and Windows 11, 64-bit. Both an installer and a portable build are available.</p>
+      </details>
+      <details>
+        <summary>Can I use multiple PHP versions?</summary>
+        <p>Yes. PHP 8.4 is included, and 8.2, 8.3, or 8.5 can be installed from the PHP page. One version is active at a time, and you can switch from the dashboard or the tray menu.</p>
+      </details>
+      <details>
+        <summary>Port 80 is used by another app. What now?</summary>
+        <p>Use <b>Check Ports</b> in Settings, then close that app or change the Apache port, for example to 8080.</p>
+      </details>
+      <details>
+        <summary>What are the MySQL username and password?</summary>
+        <p>Username <code>root</code> with an empty password. phpMyAdmin only opens from your own computer (localhost).</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom:0">
+  <div class="container">
+    <div class="cta">
+      <h2>Ready to start coding?</h2>
+      <p>Free, lightweight, and ready in two minutes.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe">Download for Windows</a>
+        <a class="btn btn-lg" href="docs.html">Read the docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="./" class="brand"><img src="../assets/img/logo.png" alt="" width="30" height="30" />Localix</a>
+        <p>A local server for Windows. Apache, PHP, MySQL, and phpMyAdmin in one desktop app.</p>
+      </div>
+      <a class="btn btn-primary" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe">Download v0.2.0</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Localix · Free to use</span>
+      <span class="footer-meta">v0.2.0 · Windows 10 / 11</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

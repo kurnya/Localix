@@ -1,31 +1,33 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documentation | Localix</title>
-  <meta name="description" content="Localix documentation: installation, configuration, virtual hosts, Laravel setup, and troubleshooting." />
-  <meta name="color-scheme" content="dark light" />
+  <title>Dokumentasi · Localix</title>
+  <meta name="description" content="Panduan memasang, memakai, dan mengatasi masalah di Localix: instalasi, project, Virtual Host, Laravel, versi PHP, phpMyAdmin, dan konflik port." />
+  <link rel="canonical" href="https://www.localix.my.id/docs.html" />
+  <link rel="alternate" hreflang="id" href="https://www.localix.my.id/docs.html" />
+  <link rel="alternate" hreflang="en" href="https://www.localix.my.id/en/docs.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.localix.my.id/docs.html" />
   <link rel="icon" href="assets/img/favicon.ico" />
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/img/logo.png" />
   <link rel="apple-touch-icon" href="assets/img/logo.png" />
-  <meta property="og:title" content="Documentation | Localix" />
-  <meta property="og:description" content="Localix documentation: installation, configuration, virtual hosts, Laravel setup, and troubleshooting." />
+  <meta property="og:title" content="Dokumentasi · Localix" />
+  <meta property="og:description" content="Panduan memasang, memakai, dan mengatasi masalah di Localix: instalasi, project, Virtual Host, Laravel, versi PHP, phpMyAdmin, dan konflik port." />
   <meta property="og:image" content="https://www.localix.my.id/assets/img/logo.png" />
   <meta property="og:url" content="https://www.localix.my.id/docs.html" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#6c63ff" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","name":"Documentation | Localix","url":"https://www.localix.my.id/docs.html","isPartOf":{"@type":"WebSite","name":"Localix","url":"https://www.localix.my.id/"},"publisher":{"@type":"Organization","name":"Localix","logo":{"@type":"ImageObject","url":"https://www.localix.my.id/assets/img/logo.png","width":512,"height":512}}}
-  </script>
+  <meta property="og:locale" content="id_ID" />
+  <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script src="assets/js/translations.js"></script>
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>
+    try { var t = localStorage.getItem('localix_theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F9LCL2V1DH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -36,500 +38,326 @@
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="navbar-brand">
-        <img src="assets/img/logo.png" alt="Localix" class="logo-img" />
-        <span>Localix</span>
-      </a>
-      <ul class="navbar-nav">
-        <li><a href="index.html" data-i18n="nav-home">Beranda</a></li>
-        <li><a href="features.html" data-i18n="nav-features">Fitur</a></li>
-        <li><a href="docs.html" class="active" data-i18n="nav-docs">Dokumentasi</a></li>
-        <li><a href="changelog.html" data-i18n="nav-changelog">Catatan Rilis</a></li>
-        <li><a href="pricing.html" data-i18n="nav-pricing">Harga</a></li>
-      </ul>
-      <div class="navbar-actions">
-        <div class="lang-dropdown">
-          <button class="lang-select-btn" id="langSelectBtn" aria-label="Language Switcher">
-            <img src="assets/img/flag-id.svg" alt="ID" width="14" height="10" class="lang-flag" id="current-lang-flag" style="border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.1)">
-            <span id="current-lang-text">ID</span>
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="lang-menu" id="langMenu">
-            <button class="lang-item" data-value="id">
-              <img src="assets/img/flag-id.svg" alt="ID" width="14" height="10" style="border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.1)"> ID
-            </button>
-            <button class="lang-item" data-value="en">
-              EN
-            </button>
-          </div>
-        </div>
-        <a href="https://github.com/kurnya/Localix" target="_blank" class="btn btn-ghost btn-sm">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span data-i18n="nav-github">GitHub</span>
-        </a>
-        <a href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe" class="btn btn-primary btn-sm" download data-i18n="nav-download">Unduh</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="./" class="brand"><img src="assets/img/logo.png" alt="" width="30" height="30" />Localix</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#tur">Fitur</a></li>
+      <li><a href="index.html#php">PHP</a></li>
+      <li><a href="docs.html" aria-current="page">Dokumentasi</a></li>
+      <li><a href="changelog.html">Catatan Rilis</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Bahasa">
+        <span class="lang-opt" aria-current="true" title="Bahasa Indonesia">ID</span><a class="lang-opt" href="en/docs.html" hreflang="en" lang="en" title="English">EN</a>
       </div>
-      <button class="navbar-hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <a class="icon-btn nav-github" href="https://github.com/kurnya/Localix" target="_blank" rel="noopener" aria-label="GitHub"><svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Ganti tema">
+        <svg class="theme-icon-light" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon-dark" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       </button>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="index.html" data-i18n="nav-home">Beranda</a>
-      <a href="features.html" data-i18n="nav-features">Fitur</a>
-      <a href="docs.html" data-i18n="nav-docs">Dokumentasi</a>
-      <a href="changelog.html" data-i18n="nav-changelog">Catatan Rilis</a>
-      <a href="pricing.html" data-i18n="nav-pricing">Harga</a>
-      <a href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe" class="btn btn-primary btn-sm" style="margin-top:8px;justify-content:center;" download data-i18n="nav-download">Unduh</a>
+      <a class="btn btn-primary btn-sm nav-download" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe">Unduh</a>
+      <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </nav>
 
-<!-- DOCS LAYOUT -->
-<div class="docs-layout">
-  <!-- SIDEBAR -->
-  <aside class="docs-sidebar" id="docsSidebar">
-    <nav class="docs-nav">
-      <div class="docs-nav-group">
-        <div class="docs-nav-label" data-i18n="docs-nav-gs">Memulai</div>
-        <a href="#introduction" class="docs-nav-link active" data-i18n="docs-nav-intro">Introduction</a>
-        <a href="#installation" class="docs-nav-link" data-i18n="docs-nav-install">Installation</a>
-        <a href="#first-run" class="docs-nav-link" data-i18n="docs-nav-first-run">First Run</a>
-        <a href="#directory-structure" class="docs-nav-link" data-i18n="docs-nav-dir">Directory Structure</a>
+<header class="page-hero">
+  <div class="container">
+    <h1>Dokumentasi</h1>
+    <p>Panduan memasang, memakai, dan mengatasi masalah di Localix 0.2.0.</p>
+  </div>
+</header>
+
+<div class="container docs">
+  <details class="docs-toc">
+    <summary>Daftar isi</summary>
+    <nav aria-label="Daftar isi dokumentasi">
+      <div class="toc-group">
+        <div class="toc-label">Memulai</div>
+        <a class="toc-link active" href="#pengantar">Pengantar</a>
+        <a class="toc-link" href="#instalasi">Instalasi</a>
+        <a class="toc-link" href="#pertama-kali">Menjalankan pertama kali</a>
+        <a class="toc-link" href="#struktur-folder">Struktur folder</a>
       </div>
-      <div class="docs-nav-group">
-        <div class="docs-nav-label" data-i18n="docs-nav-config">Configuration</div>
-        <a href="#apache-config" class="docs-nav-link" data-i18n="docs-nav-apache">Apache</a>
-        <a href="#php-config" class="docs-nav-link" data-i18n="docs-nav-php">PHP</a>
-        <a href="#mysql-config" class="docs-nav-link" data-i18n="docs-nav-mysql">MySQL</a>
-        <a href="#settings" class="docs-nav-link" data-i18n="docs-nav-settings">App Settings</a>
+      <div class="toc-group">
+        <div class="toc-label">Fitur</div>
+        <a class="toc-link" href="#projects">Projects</a>
+        <a class="toc-link" href="#virtual-host">Virtual Host</a>
+        <a class="toc-link" href="#laravel">Laravel</a>
+        <a class="toc-link" href="#php">PHP</a>
+        <a class="toc-link" href="#phpmyadmin">phpMyAdmin</a>
+        <a class="toc-link" href="#logs">Logs</a>
       </div>
-      <div class="docs-nav-group">
-        <div class="docs-nav-label" data-i18n="docs-nav-features">Features</div>
-        <a href="#projects" class="docs-nav-link" data-i18n="docs-nav-projects">Projects</a>
-        <a href="#vhosts" class="docs-nav-link" data-i18n="docs-nav-vhosts">Virtual Hosts</a>
-        <a href="#laravel" class="docs-nav-link" data-i18n="docs-nav-laravel">Laravel Setup</a>
-        <a href="#phpmyadmin" class="docs-nav-link" data-i18n="docs-nav-pma">phpMyAdmin</a>
+      <div class="toc-group">
+        <div class="toc-label">Konfigurasi</div>
+        <a class="toc-link" href="#settings">Settings</a>
+        <a class="toc-link" href="#apache">Apache</a>
+        <a class="toc-link" href="#mysql">MySQL</a>
       </div>
-      <div class="docs-nav-group">
-        <div class="docs-nav-label" data-i18n="docs-nav-ts">Troubleshooting</div>
-        <a href="#port-conflict" class="docs-nav-link" data-i18n="docs-nav-ports">Port Conflicts</a>
-        <a href="#smartscreen" class="docs-nav-link" data-i18n="docs-nav-smartscreen">SmartScreen Warning</a>
-        <a href="#faq" class="docs-nav-link" data-i18n="docs-nav-faq">FAQ</a>
+      <div class="toc-group">
+        <div class="toc-label">Pemecahan masalah</div>
+        <a class="toc-link" href="#konflik-port">Konflik port</a>
+        <a class="toc-link" href="#smartscreen">SmartScreen</a>
+        <a class="toc-link" href="#update">Update Localix</a>
+        <a class="toc-link" href="#faq">FAQ</a>
       </div>
     </nav>
-  </aside>
+  </details>
 
-  <!-- MAIN CONTENT -->
-  <main class="docs-content">
-    <article>
+  <article class="prose">
+    <section id="pengantar">
+      <div class="crumb">Memulai</div>
+      <h2>Pengantar</h2>
+      <p class="lead">Localix adalah aplikasi pengelola server lokal untuk Windows. Apache, PHP, MySQL, phpMyAdmin, dan Composer sudah disertakan, jadi Anda bisa menjalankan project web lokal tanpa memasang atau mengonfigurasi apa pun secara manual.</p>
+      <div class="callout callout-info"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div><b>Versi saat ini: 0.2.0.</b> Unduh dari <a href="https://github.com/kurnya/Localix/releases/latest" target="_blank" rel="noopener">GitHub Releases</a>. Lihat yang baru di <a href="changelog.html">Catatan Rilis</a>.</div></div>
+      <h3>Yang disertakan</h3>
+      <ul>
+        <li><b>Apache 2.4</b>: web server (port bawaan 80)</li>
+        <li><b>PHP 8.4</b>: runtime PHP bawaan. PHP 8.2, 8.3, dan 8.5 bisa dipasang dari halaman PHP</li>
+        <li><b>MySQL 9.6</b>: database server (port bawaan 3306)</li>
+        <li><b>phpMyAdmin 5.2</b>: pengelola database berbasis web</li>
+        <li><b>Composer 2.9</b>: dependency manager PHP</li>
+      </ul>
+    </section>
 
-      <!-- Introduction -->
-      <section id="introduction" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-gs">Getting Started</div>
-        <h1 data-i18n="docs-nav-intro">Introduction</h1>
-        <p class="docs-lead" data-i18n="docs-intro-lead">Localix is a simple local server manager for Windows. It bundles Apache, PHP, MySQL, phpMyAdmin, and Composer into a single desktop app so you can run local web projects without installing or configuring anything manually.</p>
-        <div class="callout callout-info">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          </div>
-          <div>
-            <strong data-i18n="docs-intro-curr">Current version:</strong> 0.2.0. Download from
-<a href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe" download target="_blank">GitHub Releases</a>.
-          </div>
+    <section id="instalasi">
+      <div class="crumb">Memulai</div>
+      <h2>Instalasi</h2>
+      <p>Tersedia dua format rilis:</p>
+      <div class="cards">
+        <div class="card">
+          <h3 style="margin-top:0">Installer</h3>
+          <p>Wizard instalasi Windows biasa. Anda bisa memilih folder instalasinya.</p>
+          <code>localix.setup.exe</code>
         </div>
-        <h3 data-i18n="docs-intro-inc">What's included</h3>
-        <ul class="doc-list">
-          <li data-i18n="docs-intro-inc-li1"><strong>Apache 2.4</strong>: Web server (default port 80)</li>
-          <li data-i18n="docs-intro-inc-li2"><strong>PHP 8.4</strong>: Bundled PHP runtime (8.2, 8.3, and 8.5 install from the PHP page)</li>
-          <li data-i18n="docs-intro-inc-li3"><strong>MySQL 9.6</strong>: Database server (default port 3306)</li>
-          <li data-i18n="docs-intro-inc-li4"><strong>phpMyAdmin</strong>: Web-based database manager</li>
-          <li data-i18n="docs-intro-inc-li5"><strong>Composer</strong>: PHP dependency manager</li>
-        </ul>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- Installation -->
-      <section id="installation" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-gs">Getting Started</div>
-        <h2 data-i18n="docs-nav-install">Installation</h2>
-        <p data-i18n="docs-install-formats">Two release formats are available:</p>
-
-        <div class="release-grid">
-          <div class="release-card">
-            <div class="release-icon" style="color:var(--brand)">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <h4 data-i18n="docs-install-inst">Installer</h4>
-            <p data-i18n="docs-install-inst-desc">Standard Windows setup wizard. Installs Localix to your chosen directory.</p>
-            <code class="release-file">localix.setup.exe</code>
-          </div>
-          <div class="release-card">
-            <div class="release-icon" style="color:var(--accent)">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 1 0 0-4h14a2 2 0 1 0 0 4M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
-            </div>
-            <h4 data-i18n="docs-install-port">Portable</h4>
-            <p data-i18n="docs-install-port-desc">Single executable, no installation. Run from a USB drive or any folder.</p>
-            <code class="release-file">localix.0.2.0.x64.exe</code>
-          </div>
+        <div class="card">
+          <h3 style="margin-top:0">Portable</h3>
+          <p>Satu file exe tanpa instalasi. Data disimpan di folder <code>localix-data</code> di sebelahnya.</p>
+          <code>localix.0.2.0.x64.exe</code>
         </div>
+      </div>
+      <h3>Langkah</h3>
+      <ol>
+        <li>Buka <a href="https://github.com/kurnya/Localix/releases/latest" target="_blank" rel="noopener">rilis terbaru di GitHub</a>.</li>
+        <li>Unduh <code>localix.setup.exe</code> atau versi portable.</li>
+        <li>(Opsional) Cocokkan checksum dengan <code>SHA256SUMS.txt</code>.</li>
+        <li>Jalankan installer, atau buka file portable-nya.</li>
+      </ol>
+      <div class="callout callout-warn"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div>Windows SmartScreen bisa menampilkan peringatan karena aplikasi belum ditandatangani. Lihat <a href="#smartscreen">SmartScreen</a>.</div></div>
+    </section>
 
-        <h3 data-i18n="docs-install-steps">Steps</h3>
-        <ol class="doc-list">
-          <li data-i18n="docs-install-step1">Go to <a href="https://github.com/kurnya/Localix/releases" target="_blank">GitHub Releases</a>.</li>
-          <li data-i18n="docs-install-step2">Download <code>localix.setup.exe</code> or the portable build.</li>
-          <li data-i18n="docs-install-step3">(Optional) Verify the download using <code>SHA256SUMS.txt</code>.</li>
-          <li data-i18n="docs-install-step4">Run the installer or launch the portable executable.</li>
-        </ol>
+    <section id="pertama-kali">
+      <div class="crumb">Memulai</div>
+      <h2>Menjalankan pertama kali</h2>
+      <ol>
+        <li>Buka Localix. Dasbor tampil dengan Apache dan MySQL dalam keadaan berhenti.</li>
+        <li>Klik <b>Start All</b> untuk menjalankan keduanya.</li>
+        <li>Klik <b>Localhost</b> atau buka <code>http://localhost</code> di browser. Halaman sambutan Localix menandakan server sudah jalan.</li>
+        <li>Klik <b>phpMyAdmin</b> atau buka <code>http://localhost/phpmyadmin</code> untuk mengelola database.</li>
+        <li>Klik <b>Folder www</b> dan taruh project Anda di sana.</li>
+      </ol>
+      <div class="callout callout-tip"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg><div>Login MySQL bawaan: username <code>root</code>, password kosong.</div></div>
+    </section>
 
-        <div class="callout callout-warn">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div data-i18n="docs-install-warn">Windows SmartScreen may show a warning for unsigned apps. See <a href="#smartscreen">SmartScreen Warning</a> for how to proceed safely.</div>
-        </div>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- First Run -->
-      <section id="first-run" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-gs">Getting Started</div>
-        <h2 data-i18n="docs-fr-title">First Run</h2>
-        <p data-i18n="docs-fr-p1">After launching Localix:</p>
-        <ol class="doc-list">
-          <li data-i18n="docs-fr-li1">The dashboard opens. Apache and MySQL are stopped by default.</li>
-          <li data-i18n="docs-fr-li2">Click <strong>Start All</strong> to start both services.</li>
-          <li data-i18n="docs-fr-li3">Open your browser and go to <code>http://localhost</code>.</li>
-          <li data-i18n="docs-fr-li4">The Localix landing page confirms the stack is running.</li>
-          <li data-i18n="docs-fr-li5">Access phpMyAdmin at <code>http://localhost/phpmyadmin</code>.</li>
-        </ol>
-        <div class="callout callout-tip">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div data-i18n="docs-fr-tip">Default MySQL credentials: username <code>root</code>, no password. Change this in phpMyAdmin for production setups.</div>
-        </div>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- Directory Structure -->
-      <section id="directory-structure" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-gs">Getting Started</div>
-        <h2 data-i18n="docs-dir-title">Directory Structure</h2>
-        <p data-i18n="docs-dir-p1">After installation, Localix creates the following structure. The portable build keeps the same folders inside <code>localix-data/</code> next to the exe.</p>
-        <div class="code-block">
-          <div class="code-block-header">
-            <span data-i18n="docs-dir-header">Localix install directory</span>
-          </div>
-          <pre><code>localix/
-├── localix.exe          # Main app
-├── resources/runtime/   # Bundled runtimes (read-only)
+    <section id="struktur-folder">
+      <div class="crumb">Memulai</div>
+      <h2>Struktur folder</h2>
+      <p>Setelah instalasi, folder Localix berisi seperti ini. Versi portable memakai folder yang sama di dalam <code>localix-data/</code>.</p>
+      <div class="code"><div class="code-title">Folder instalasi Localix</div><pre><code>localix/
+├── localix.exe          # Aplikasi utama
+├── resources/runtime/   # Runtime bawaan (hanya-baca)
 │   ├── apache/          # Apache 2.4
 │   ├── php/8.4/         # PHP 8.4
 │   ├── mysql/           # MySQL 9.6
 │   ├── phpmyadmin/      # phpMyAdmin
 │   └── composer/        # Composer
-├── www/                 # ← Put your projects here
-├── runtimes/            # PHP / phpMyAdmin installed from the PHP page
+├── www/                 # ← Taruh project Anda di sini
+├── runtimes/            # PHP / phpMyAdmin yang dipasang dari halaman PHP
 ├── config/
-│   ├── httpd.conf       # Apache config
-│   ├── php.ini          # PHP config (managed from the PHP page)
-│   ├── my.ini           # MySQL config
-│   └── vhosts.conf      # Generated vhost config
+│   ├── httpd.conf       # Konfigurasi Apache
+│   ├── php.ini          # Konfigurasi PHP (diatur dari halaman PHP)
+│   ├── my.ini           # Konfigurasi MySQL
+│   └── vhosts.conf      # Konfigurasi virtual host (dibuat otomatis)
 ├── data/
-│   └── mysql/           # MySQL data directory
-└── logs/                # Localix, Apache, MySQL, and PHP logs</code></pre>
-        </div>
-      </section>
+│   └── mysql/           # Data database MySQL
+└── logs/                # Log Localix, Apache, MySQL, dan PHP</code></pre></div>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="projects">
+      <div class="crumb">Fitur</div>
+      <h2>Projects</h2>
+      <p>Setiap folder di dalam <code>www/</code> dianggap sebagai project. Localix memindai folder ini selama aplikasi berjalan dan menampilkannya di halaman <b>Projects</b>, lengkap dengan URL dan foldernya.</p>
+      <div class="code"><div class="code-title">Pola URL</div><pre><code>www/my-project   →  http://localhost/my-project/
+www/portfolio    →  http://localhost/portfolio/</code></pre></div>
+      <div class="callout callout-info"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div>Project Laravel yang punya folder <code>public/</code> otomatis dilayani dari <code>public/</code>. Nama folder <code>phpmyadmin</code> dicadangkan dan diabaikan oleh pemindai.</div></div>
+    </section>
 
-      <!-- Apache -->
-      <section id="apache-config" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-config">Configuration</div>
-        <h2 data-i18n="docs-ap-title">Apache Configuration</h2>
-        <p data-i18n="docs-ap-p1">Apache configuration is loaded from <code>config/httpd.conf</code>. You can edit this file to customize modules, mime types, or directory restrictions.</p>
-        <p data-i18n="docs-ap-p2">If Apache fails to start after an edit, check the <strong>Apache Error</strong> log on the <strong>Logs</strong> page.</p>
-        <div class="callout callout-warn">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div data-i18n="docs-ap-warn">Writing incorrect configuration rules may prevent Apache from starting. If this happens, restore a backup of your configuration or check <code>logs/apache-error.log</code>.</div>
-        </div>
-      </section>
+    <section id="virtual-host">
+      <div class="crumb">Fitur</div>
+      <h2>Virtual Host</h2>
+      <p>Virtual Host memberi setiap project domain lokal sendiri, misalnya <code>my-project.locx</code>, sebagai ganti <code>localhost/my-project</code>.</p>
+      <ol>
+        <li>Buka halaman <b>Projects</b>.</li>
+        <li>Aktifkan <b>Virtual host</b>.</li>
+        <li>Atur akhiran domain (bawaan <code>.locx</code>) lalu klik <b>Simpan</b>.</li>
+        <li>Klik <b>Copy hosts entry</b> (atau <b>Buka hosts file</b>) dan tempel entrinya ke file hosts Windows.</li>
+        <li>Jika domain project baru belum muncul, klik <b>Regenerate</b>.</li>
+      </ol>
+      <div class="code"><div class="code-title">C:\Windows\System32\drivers\etc\hosts</div><pre><code>127.0.0.1  my-project.locx
+127.0.0.1  portfolio.locx</code></pre></div>
+      <div class="callout callout-warn"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div>Mengedit file hosts membutuhkan hak Administrator. Buka Notepad dengan <b>Run as administrator</b> sebelum menempelkan entri.</div></div>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="laravel">
+      <div class="crumb">Fitur</div>
+      <h2>Laravel</h2>
+      <p>Composer sudah disertakan, jadi Anda bisa membuat project Laravel tanpa memasang PHP atau Composer di Windows.</p>
+      <ol>
+        <li>Di halaman <b>Projects</b>, klik <b>+ Laravel</b>.</li>
+        <li>Isi <b>Nama project Laravel</b> dan pilih <b>Lokasi</b> dengan <b>Browse</b>.</li>
+        <li>Klik <b>Buat project</b>. Localix menjalankan <code>composer create-project laravel/laravel</code> memakai PHP dan Composer bawaan.</li>
+        <li>Setelah selesai, project muncul di halaman Projects (dengan domain <code>.locx</code> jika Virtual Host aktif).</li>
+      </ol>
+      <div class="callout callout-tip"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg><div>Pengaturan database bawaan Laravel di <code>.env</code> cocok dengan Localix: <code>DB_HOST=127.0.0.1</code>, <code>DB_PORT=3306</code>, <code>DB_USERNAME=root</code>, <code>DB_PASSWORD=</code> (kosong).</div></div>
+    </section>
 
-      <!-- PHP -->
-      <section id="php-config" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-config">Configuration</div>
-        <h2 data-i18n="docs-php-title">PHP Configuration</h2>
-        <p data-i18n="docs-php-p1">Manage PHP from the <strong>PHP</strong> page. The <strong>Versi</strong> tab installs, updates, activates, or removes PHP 8.2 to 8.5. You can also switch the active version from the dashboard or the tray menu; if Apache fails to start, the previous version is restored.</p>
-        <p data-i18n="docs-php-p2">On the <strong>Pengaturan</strong> tab, set memory limit, upload size, max execution time, timezone, and OPcache, then click <strong>Simpan &amp; terapkan</strong>. Localix tests the new <code>config/php.ini</code> before applying it. Extra lines go in <strong>Custom directives</strong>.</p>
-        <h3 data-i18n="docs-php-common">Extensions enabled by default (Extensions tab):</h3>
-        <ul class="doc-list">
-          <li data-i18n="docs-php-li1"><code>pdo_mysql</code>, <code>mysqli</code>, <code>pdo_sqlite</code>, <code>sqlite3</code> for databases</li>
-          <li data-i18n="docs-php-li2"><code>openssl</code>, <code>curl</code> for secure connections</li>
-          <li data-i18n="docs-php-li3"><code>gd</code>, <code>mbstring</code>, <code>zip</code>, <code>fileinfo</code>, <code>intl</code> for web frameworks</li>
-          <li data-i18n="docs-php-li4"><code>mysqli</code>, <code>mbstring</code>, <code>openssl</code>, and <code>pdo_sqlite</code> are always on and cannot be turned off.</li>
-        </ul>
-      </section>
+    <section id="php">
+      <div class="crumb">Fitur</div>
+      <h2>PHP</h2>
+      <p>Semua pengaturan PHP ada di halaman <b>PHP</b>, yang punya tiga tab.</p>
+      <h3>Versi (<b>Versi</b>)</h3>
+      <p>Pasang, perbarui, aktifkan, atau hapus PHP 8.2 sampai 8.5. File diunduh dari situs resmi PHP dan dicek SHA-256 sebelum dipakai. Klik <b>Periksa update</b> untuk melihat versi terbaru. Versi aktif juga bisa diganti dari dasbor atau menu tray. Jika Apache gagal start setelah ganti versi, versi sebelumnya dipulihkan otomatis.</p>
+      <h3>Extensions</h3>
+      <p>Centang extension yang ingin diaktifkan. Yang aktif secara bawaan:</p>
+      <ul>
+        <li><code>pdo_mysql</code>, <code>mysqli</code>, <code>pdo_sqlite</code>, <code>sqlite3</code> untuk database</li>
+        <li><code>openssl</code>, <code>curl</code> untuk koneksi aman</li>
+        <li><code>gd</code>, <code>mbstring</code>, <code>zip</code>, <code>fileinfo</code>, <code>intl</code> untuk framework modern</li>
+      </ul>
+      <p><code>mysqli</code>, <code>mbstring</code>, <code>openssl</code>, dan <code>pdo_sqlite</code> selalu aktif dan tidak bisa dimatikan.</p>
+      <h3>Pengaturan (<b>Pengaturan</b>)</h3>
+      <p>Atur memory limit, ukuran upload, max execution time, timezone, tampilan error di browser, dan OPcache, lalu klik <b>Simpan &amp; terapkan</b>. Localix menguji <code>config/php.ini</code> yang baru sebelum menerapkannya. Baris tambahan bisa ditulis di <b>Custom directives</b>. Gunakan <b>Lihat php.ini</b> untuk melihat hasilnya atau <b>Kembalikan default</b> untuk mengulang dari awal.</p>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="phpmyadmin">
+      <div class="crumb">Fitur</div>
+      <h2>phpMyAdmin</h2>
+      <p>phpMyAdmin sudah terpasang. Buka lewat tombol <b>phpMyAdmin</b> di dasbor atau di <code>http://localhost/phpmyadmin</code>, lalu login dengan username <code>root</code> dan password kosong.</p>
+      <p>Demi keamanan, phpMyAdmin hanya bisa dibuka dari komputer Anda sendiri (<code>localhost</code> / <code>127.0.0.1</code>). Versi yang lebih baru bisa dipasang dari tab <b>Versi</b> di halaman PHP.</p>
+    </section>
 
-      <!-- MySQL -->
-      <section id="mysql-config" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-config">Configuration</div>
-        <h2 data-i18n="docs-my-title">MySQL Configuration</h2>
-        <p data-i18n="docs-my-p1">MySQL is configured via <code>config/my.ini</code>. The primary database data is stored under <code>data/mysql/</code>.</p>
-        <p data-i18n="docs-my-p2">The default port is <code>3306</code>. Change it in <strong>Settings</strong> if another local database server is already using this port.</p>
-      </section>
+    <section id="logs">
+      <div class="crumb">Fitur</div>
+      <h2>Logs</h2>
+      <p>Halaman <b>Logs</b> menampilkan log Localix, Apache Error, Apache Access, MySQL, dan PHP Error. Gunakan <b>Refresh</b> untuk memuat ulang, <b>Clear Log</b> untuk mengosongkan, dan <b>Open Logs Folder</b> untuk membuka folder <code>logs/</code>.</p>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="settings">
+      <div class="crumb">Konfigurasi</div>
+      <h2>Settings</h2>
+      <ul>
+        <li><b>Jalankan saat Windows start</b>: Localix berjalan di latar belakang (system tray) saat Windows menyala.</li>
+        <li><b>Start layanan saat dibuka</b>: Apache dan MySQL langsung berjalan saat Localix dibuka, dan browser bisa dibuka otomatis setelah server siap.</li>
+        <li><b>Tema</b>: terang, gelap, atau ikuti Windows.</li>
+        <li><b>Port</b>: ubah port Apache (bawaan 80) dan MySQL (bawaan 3306).</li>
+        <li><b>Perawatan</b>: <b>Check Ports</b>, perbaiki konfigurasi phpMyAdmin, dan inisialisasi ulang data MySQL (data lama di-backup dulu).</li>
+      </ul>
+    </section>
 
-      <!-- Settings -->
-      <section id="settings" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-config">Configuration</div>
-        <h2 data-i18n="docs-set-title">App Settings</h2>
-        <p data-i18n="docs-set-p1">The Localix settings panel lets you adjust application behavior:</p>
-        <ul class="doc-list">
-          <li data-i18n="docs-set-li1"><strong>Run at Windows startup</strong>: Localix starts in the background (system tray) when Windows starts.</li>
-          <li data-i18n="docs-set-li2"><strong>Start services on open</strong>: Start Apache and MySQL when Localix opens, and optionally open the browser once the server is up.</li>
-          <li data-i18n="docs-set-li3"><strong>Ports</strong>: Change the Apache (default 80) and MySQL (default 3306) ports.</li>
-          <li data-i18n="docs-set-li4"><strong>Theme &amp; Maintenance</strong>: Pick light, dark, or follow Windows; check ports, repair phpMyAdmin, or reinitialize MySQL data.</li>
-        </ul>
-      </section>
+    <section id="apache">
+      <div class="crumb">Konfigurasi</div>
+      <h2>Apache</h2>
+      <p>Konfigurasi Apache ada di <code>config/httpd.conf</code>. Anda bisa mengeditnya untuk mengaktifkan modul atau mengatur akses folder.</p>
+      <div class="callout callout-warn"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div>Konfigurasi yang salah bisa membuat Apache gagal start. Jika itu terjadi, kembalikan perubahan dan cek log <b>Apache Error</b> di halaman Logs.</div></div>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="mysql">
+      <div class="crumb">Konfigurasi</div>
+      <h2>MySQL</h2>
+      <p>MySQL dikonfigurasi lewat <code>config/my.ini</code>, dan datanya disimpan di <code>data/mysql/</code>. Port bawaannya <code>3306</code>; ubah di <b>Settings</b> jika port itu sudah dipakai database lain.</p>
+      <div class="callout callout-tip"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg><div>Untuk backup, hentikan MySQL lalu salin folder <code>data/mysql/</code>, atau ekspor database dari phpMyAdmin.</div></div>
+    </section>
 
-      <!-- Projects -->
-      <section id="projects" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-features">Features</div>
-        <h2 data-i18n="docs-proj-title">Projects</h2>
-        <p data-i18n="docs-proj-p1">Any folder inside <code>www/</code> is treated as a project. Localix scans this folder while running and lists detected projects on the <strong>Projects</strong> page.</p>
-        <div class="code-block">
-          <div class="code-block-header"><span>URL pattern</span></div>
-          <pre><code>www/my-project    →  http://localhost/my-project/
-www/portfolio     →  http://localhost/portfolio/
-www/my-laravel    →  http://localhost/my-laravel/  (routes to public/)</code></pre>
-        </div>
-        <div class="callout callout-info">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          </div>
-          <div data-i18n="docs-proj-p2">Laravel projects with a <code>public/</code> folder are detected automatically and served from <code>public/</code>.</div>
-        </div>
-      </section>
+    <section id="konflik-port">
+      <div class="crumb">Pemecahan masalah</div>
+      <h2>Konflik port</h2>
+      <p>Jika Apache gagal start, biasanya port 80 sedang dipakai aplikasi lain (IIS, Skype, XAMPP, dan sebagainya). Klik <b>Check Ports</b> di Settings untuk melihat port mana yang terpakai.</p>
+      <h3>Opsi A: tutup aplikasi lain</h3>
+      <p>Hentikan aplikasi yang memakai port tersebut, lalu klik <b>Start All</b> lagi.</p>
+      <h3>Opsi B: ganti port Apache</h3>
+      <ol>
+        <li>Buka <b>Settings</b>.</li>
+        <li>Ganti port Apache ke port yang kosong, misalnya <code>8080</code>.</li>
+        <li>Restart Apache, lalu buka <code>http://localhost:8080</code>.</li>
+      </ol>
+      <h3>Opsi C: jalankan sebagai Administrator</h3>
+      <p>Klik kanan Localix lalu pilih <b>Run as administrator</b>. Ini bisa membantu jika Windows menolak akses ke port 80.</p>
+      <div class="code"><div class="code-title">PowerShell: cari program yang memakai port 80</div><pre><code>netstat -ano | findstr :80</code></pre></div>
+    </section>
 
-      <div class="docs-divider"></div>
+    <section id="smartscreen">
+      <div class="crumb">Pemecahan masalah</div>
+      <h2>SmartScreen</h2>
+      <p>Karena Localix belum ditandatangani dengan sertifikat berbayar, Windows SmartScreen bisa menampilkan "Windows protected your PC" saat installer dijalankan.</p>
+      <ol>
+        <li>Cocokkan file dengan <code>SHA256SUMS.txt</code> dari halaman rilis.</li>
+        <li>Di dialog SmartScreen, klik <b>More info</b>.</li>
+        <li>Klik <b>Run anyway</b>.</li>
+      </ol>
+      <div class="code"><div class="code-title">PowerShell: hitung checksum</div><pre><code>Get-FileHash .\localix.setup.exe</code></pre></div>
+      <div class="callout callout-info"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div>Unduh Localix hanya dari halaman rilis resmi: <a href="https://github.com/kurnya/Localix/releases" target="_blank" rel="noopener">github.com/kurnya/Localix/releases</a>.</div></div>
+    </section>
 
-      <!-- Virtual Hosts -->
-      <section id="vhosts" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-features">Features</div>
-        <h2 data-i18n="docs-vh-title">Virtual Hosts</h2>
-        <p data-i18n="docs-vh-p1">Virtual Hosts let you use clean local domains instead of subdirectory URLs.</p>
-        <h3 data-i18n="docs-vh-p2">Enabling Virtual Hosts</h3>
-        <ol class="doc-list">
-          <li data-i18n="docs-vh-li1">Open the <strong>Projects</strong> page in Localix.</li>
-          <li data-i18n="docs-vh-li2">Turn on <strong>Virtual host</strong>.</li>
-          <li data-i18n="docs-vh-li3">Set the domain suffix (default: <code>.locx</code>) and click <strong>Simpan</strong>. Every folder in <code>www/</code> gets a domain such as <code>shop.locx</code>.</li>
-          <li data-i18n="docs-vh-li4">Click <strong>Copy hosts entry</strong> (or <strong>Buka hosts file</strong>) and paste the entries into your Windows hosts file.</li>
-          <li data-i18n="docs-vh-li5">If a new project's domain is missing, click <strong>Regenerate</strong>.</li>
-        </ol>
-        <h3>Hosts File</h3>
-        <p data-i18n="docs-vh-p3">Add entries to your Windows hosts file so Windows resolves the local domains:</p>
-        <div class="code-block">
-          <div class="code-block-header">
-            <span>C:\Windows\System32\drivers\etc\hosts</span>
-          </div>
-          <pre><code>127.0.0.1  my-project.locx
-127.0.0.1  portfolio.locx</code></pre>
-        </div>
-        <div class="callout callout-warn">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </div>
-          <div data-i18n="docs-vh-warn">Editing the hosts file requires Administrator privileges.</div>
-        </div>
-      </section>
+    <section id="update">
+      <div class="crumb">Pemecahan masalah</div>
+      <h2>Update Localix</h2>
+      <p>Unduh installer versi terbaru dan jalankan. Project (<code>www</code>), database (<code>data</code>), dan pengaturan (<code>config</code>) tetap tersimpan, termasuk saat update dari versi 0.1.0.</p>
+    </section>
 
-      <div class="docs-divider"></div>
-
-      <!-- Laravel Setup -->
-      <section id="laravel" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-features">Features</div>
-        <h2 data-i18n="docs-lar-title">Laravel Setup</h2>
-        <p data-i18n="docs-lar-p1">Localix includes Composer so you can create Laravel projects without any prior setup.</p>
-        <h3 data-i18n="docs-lar-steps">Create a New Laravel Project</h3>
-        <ol class="doc-list">
-          <li data-i18n="docs-lar-li1">On the <strong>Projects</strong> page, click <strong>+ Laravel</strong>.</li>
-          <li data-i18n="docs-lar-li2">In the <strong>Buat project</strong> dialog, enter a project name (e.g. <code>my-store</code>) and pick the location with <strong>Browse</strong>.</li>
-          <li data-i18n="docs-lar-li3">Confirm. Localix runs <code>composer create-project laravel/laravel</code> with its bundled PHP and Composer.</li>
-          <li data-i18n="docs-lar-li4">When it finishes, the project appears on the Projects page (with a <code>.locx</code> domain if Virtual Hosts is on).</li>
-        </ol>
-        <div class="callout callout-tip">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <div data-i18n="docs-lar-tip">Laravel's <code>.env</code> database defaults match Localix: <code>DB_HOST=127.0.0.1</code>, <code>DB_PORT=3306</code>, <code>DB_USERNAME=root</code>, <code>DB_PASSWORD=</code> (empty).</div>
-        </div>
-        <h3>Artisan via Terminal</h3>
-        <p data-i18n="docs-lar-p2">Use any terminal. Localix doesn't lock you out. Run Artisan commands from your project directory normally:</p>
-        <div class="code-block">
-          <div class="code-block-header"><span>Terminal</span></div>
-          <pre><code>cd C:\path\to\localix\www\my-laravel-app
-php artisan migrate
-php artisan serve</code></pre>
-        </div>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- phpMyAdmin -->
-      <section id="phpmyadmin" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-features">Features</div>
-        <h2 data-i18n="docs-pma-title">phpMyAdmin</h2>
-        <p data-i18n="docs-pma-p1">phpMyAdmin is pre-installed. You can access it by clicking the <strong>phpMyAdmin</strong> button on the dashboard or visiting <code>http://localhost/phpmyadmin</code>.</p>
-        <p data-i18n="docs-pma-p2">Log in with username <code>root</code> and an empty password. For safety, phpMyAdmin only opens from <code>localhost</code> / <code>127.0.0.1</code>. Newer phpMyAdmin versions can be installed from the PHP page.</p>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- Port Conflict -->
-      <section id="port-conflict" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-ts">Troubleshooting</div>
-        <h2 data-i18n="docs-pc-title">Port Conflicts</h2>
-        <p data-i18n="docs-pc-p1">If Apache fails to start, port 80 is likely in use by another app (IIS, Skype, XAMPP, etc.). Use <strong>Check Ports</strong> on the <strong>Settings</strong> page to see which ports are taken.</p>
-        <h3 data-i18n="docs-pc-sol-a">Option A: Run as Administrator</h3>
-        <p data-i18n="docs-pc-sol-li1">Right-click <code>localix.exe</code> → <em>Run as administrator</em>. This can resolve binding issues on port 80.</p>
-        <h3 data-i18n="docs-pc-sol-b">Option B: Change the Apache Port</h3>
-        <ol class="doc-list">
-          <li data-i18n="docs-pc-sol-b-li1">Open <strong>Settings</strong> in Localix.</li>
-          <li data-i18n="docs-pc-sol-b-li2">Change the Apache port to an available one (e.g., <code>8080</code>).</li>
-          <li data-i18n="docs-pc-sol-b-li3">Restart Apache.</li>
-          <li data-i18n="docs-pc-sol-b-li4">Access your server at <code>http://localhost:8080</code>.</li>
-        </ol>
-        <h3 data-i18n="docs-pc-sol-c">Find what's using port 80</h3>
-        <div class="code-block">
-          <div class="code-block-header"><span>PowerShell (run as Admin)</span></div>
-          <pre><code>netstat -ano | findstr :80</code></pre>
-        </div>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- SmartScreen -->
-      <section id="smartscreen" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-ts">Troubleshooting</div>
-        <h2 data-i18n="docs-ss-title">SmartScreen Warning</h2>
-        <p data-i18n="docs-ss-p1">Windows SmartScreen may display an "Unknown Publisher" warning when running the installer because Localix is currently unsigned.</p>
-        <h3 data-i18n="docs-ss-steps">How to proceed</h3>
-        <ol class="doc-list">
-          <li data-i18n="docs-ss-verify">Verify the installer using <code>SHA256SUMS.txt</code> from the Releases page.</li>
-          <li data-i18n="docs-ss-li1">In the SmartScreen dialog, click <strong>More info</strong>.</li>
-          <li data-i18n="docs-ss-li2">Click <strong>Run anyway</strong>.</li>
-        </ol>
-        <div class="callout callout-info">
-          <div class="callout-icon">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          </div>
-          <div data-i18n="docs-ss-info">Only download Localix from the official releases page: <a href="https://github.com/kurnya/Localix/releases" target="_blank">github.com/kurnya/Localix/releases</a></div>
-        </div>
-      </section>
-
-      <div class="docs-divider"></div>
-
-      <!-- FAQ -->
-      <section id="faq" class="docs-section">
-        <div class="docs-breadcrumb" data-i18n="docs-nav-ts">Troubleshooting</div>
-        <h2 data-i18n="docs-fq-title">FAQ</h2>
-
-        <div class="faq-list" style="margin-top:28px;">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="faq-q1">Is Localix free?</span>
-              <span class="faq-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer" data-i18n="faq-a1">Yes, completely free. No subscription, no license key, no hidden costs.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="faq-q2">Does Localix install system-wide services?</span>
-              <span class="faq-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer" data-i18n="faq-a2">No. Apache and MySQL run as processes managed by Localix only when the app is open. No Windows services are installed.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="faq-q5">Can I use multiple PHP versions?</span>
-              <span class="faq-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer" data-i18n="faq-a5">Yes. Since v0.2.0 you can install PHP 8.2 to 8.5 from the PHP page and switch versions from the dashboard or the tray menu. PHP 8.4 is included out of the box. One version is active at a time.</div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">
-              <span data-i18n="docs-faq-mysql-pw-q">Where is the MySQL root password?</span>
-              <span class="faq-chevron"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-            </button>
-            <div class="faq-answer" data-i18n="docs-faq-mysql-pw-a">The default MySQL root password is empty (no password). You can set one via phpMyAdmin or the MySQL CLI.</div>
-          </div>
-        </div>
-      </section>
-
-    </article>
-  </main>
+    <section id="faq">
+      <div class="crumb">Pemecahan masalah</div>
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Apakah bisa memakai beberapa versi PHP?</summary>
+          <p>Bisa. PHP 8.4 sudah disertakan, dan 8.2, 8.3, atau 8.5 bisa dipasang dari halaman PHP. Satu versi aktif dalam satu waktu.</p>
+        </details>
+        <details>
+          <summary>Apakah Localix memasang service Windows?</summary>
+          <p>Tidak. Apache dan MySQL berjalan sebagai proses yang dikelola Localix, bukan service Windows.</p>
+        </details>
+        <details>
+          <summary>Di mana data database disimpan?</summary>
+          <p>Di <code>data/mysql/</code> di dalam folder Localix.</p>
+        </details>
+        <details>
+          <summary>Apa password root MySQL?</summary>
+          <p>Kosong (tanpa password). Anda bisa mengaturnya lewat phpMyAdmin.</p>
+        </details>
+      </div>
+    </section>
+  </article>
 </div>
 
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-area">
-          <img src="assets/img/logo.png" alt="Localix" class="logo-img" />
-          <span>Localix</span>
-        </div>
-        <p class="footer-desc" data-i18n="footer-desc">A simple local server manager for Windows developers. Apache, PHP, MySQL, all in one place.</p>
+        <a href="./" class="brand"><img src="assets/img/logo.png" alt="" width="30" height="30" />Localix</a>
+        <p>Server lokal untuk Windows. Apache, PHP, MySQL, dan phpMyAdmin dalam satu aplikasi desktop.</p>
       </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer-product">Product</h4>
-        <ul>
-          <li><a href="features.html" data-i18n="nav-features">Features</a></li>
-          <li><a href="changelog.html" data-i18n="nav-changelog">Changelog</a></li>
-          <li><a href="pricing.html" data-i18n="nav-pricing">Pricing</a></li>
-          <li><a href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe" download data-i18n="nav-download">Download</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer-docs">Docs</h4>
-        <ul>
-          <li><a href="docs.html" data-i18n="footer-getting-started">Getting Started</a></li>
-          <li><a href="docs.html#vhosts" data-i18n="footer-vhosts">Virtual Hosts</a></li>
-          <li><a href="docs.html#laravel" data-i18n="footer-laravel">Laravel Setup</a></li>
-          <li><a href="docs.html#faq" data-i18n="footer-faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="footer-links">Links</h4>
-        <ul>
-          <li><a href="https://github.com/kurnya/Localix" target="_blank" data-i18n="nav-github">GitHub</a></li>
-          <li><a href="https://github.com/kurnya/Localix/releases" target="_blank" data-i18n="footer-releases">Releases</a></li>
-          <li><a href="https://github.com/kurnya/Localix/issues" target="_blank" data-i18n="footer-issues">Issues</a></li>
-        </ul>
-      </div>
+      <a class="btn btn-primary" href="https://github.com/kurnya/Localix/releases/latest/download/localix.setup.exe">Unduh v0.2.0</a>
     </div>
     <div class="footer-bottom">
-        <div class="footer-copyright" data-i18n="footer-copyright">
-          &copy; 2025 Localix. Free to use.
-        </div>
+      <span>© 2026 Localix · Gratis untuk digunakan</span>
+      <span class="footer-meta">v0.2.0 · Windows 10 / 11</span>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>

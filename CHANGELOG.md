@@ -11,6 +11,7 @@ Manage PHP versions, PHP extensions, and phpMyAdmin from inside Localix, with a 
 - PHP page: install, update, and switch PHP 8.2-8.5 and phpMyAdmin from inside the app. Files come from the official sites and are verified with SHA-256.
 - Switch PHP from the dashboard or the tray menu; the previous version is restored if Apache fails to start.
 - PHP extensions and php.ini settings with checkboxes, plus custom directives that are tested before they are applied.
+- PHP in the terminal (optional): add the active PHP and Composer to the Windows PATH so `php artisan` and `composer` use the same version and settings as Localix.
 - Simpler navigation: Dashboard, Projects, PHP, Logs, Settings.
 
 ### Improvements
