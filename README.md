@@ -1,6 +1,6 @@
 # Localix
 
-![Localix Logo](build/icon.ico)
+![Localix Logo](website/assets/img/logo.png)
 
 **Website:** [www.localix.my.id](https://www.localix.my.id) · **Documentation:** [Installation Guide](docs/installation.md) · [Download Latest Release](https://github.com/kurnya/Localix/releases/latest) · [Release Notes](https://github.com/kurnya/Localix/releases)
 
@@ -129,29 +129,17 @@ https://github.com/kurnya/Localix/releases
 
 You can verify release files with `SHA256SUMS.txt`.
 
-## Development
+## Repository
 
-Localix is an Electron app. To run it from source you need Node.js and the bundled runtime (Apache, PHP, MySQL, phpMyAdmin, Composer) placed in `runtime/`.
-
-```text
-npm install
-npm run dev
-```
-
-In development mode, settings, databases, projects, and logs are stored in `.dev-data/` so the repository root stays clean.
-
-See [docs/development.md](docs/development.md) for the full setup, runtime versions, and build steps.
-
-## Repository Layout
+This repository contains the Localix website, documentation, changelog, and release downloads. The application source code is not public.
 
 ```text
-app/        Electron main process, preload, and renderer
-build/      App icon and NSIS installer script
-docs/       User and developer documentation
-runtime/    Bundled Apache, PHP, MySQL, phpMyAdmin, Composer (not in Git)
+docs/       Installation guide
 website/    Source of www.localix.my.id (deployed with GitHub Pages)
 ```
 
+Bug reports and feature requests are welcome in [Issues](https://github.com/kurnya/Localix/issues).
+
 ## License
 
-Localix is released under the [MIT License](LICENSE). Bundled third-party components keep their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Localix is free to download and use. See [LICENSE](LICENSE) for the terms. Bundled third-party components keep their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

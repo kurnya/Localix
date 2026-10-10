@@ -1,0 +1,34 @@
+Localix Freeware License
+
+Copyright (c) 2026 Dimas Kurniawan. All rights reserved.
+
+Localix is free software in the sense of "free of charge". You may download,
+install, and use Localix on any number of computers, for personal or
+commercial work, without paying a fee.
+
+You may share the unmodified installer or portable build, provided that it is
+distributed free of charge and together with this license. Please link to the
+official download page (https://github.com/kurnya/Localix/releases) where
+possible.
+
+You may not:
+- sell Localix or include it in a paid product or bundle;
+- modify, decompile, or reverse engineer Localix, except where applicable law
+  expressly permits it;
+- remove or alter copyright notices, branding, or this license.
+
+The website content, documentation, logo, and screenshots in this repository
+are copyright of the author and may not be reused without permission, except
+for linking to or quoting them with attribution.
+
+Localix bundles third-party software (Apache HTTP Server, PHP, MySQL,
+phpMyAdmin, Composer, Electron). Those components are licensed under their own
+terms, listed in THIRD_PARTY_NOTICES.md, and nothing in this license limits
+your rights under those licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

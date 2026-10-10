@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-Localix itself is licensed under the [MIT License](LICENSE). Release builds bundle the following third-party software, which is distributed under its own license. These components are not modified by Localix, and their license files are included in the `runtime/` folder of each build.
+Localix itself is freeware; see [LICENSE](LICENSE). Release builds bundle the following third-party software, which is distributed under its own license. These components are not modified by Localix, and their license files are included in the `runtime/` folder of each build.
 
 | Component | Version | License | Project |
 |---|---|---|---|

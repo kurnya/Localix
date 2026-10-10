@@ -18,7 +18,7 @@ window.localixTranslations = {
     "footer-faq": "Tanya Jawab",
     "footer-releases": "Rilis",
     "footer-issues": "Laporan Masalah",
-    "footer-copyright": "© 2025 Localix. Dirilis di bawah Lisensi MIT.",
+    "footer-copyright": "© 2025 Localix. Gratis untuk digunakan.",
 
     // Index page
     "hero-title": "Stack Dev Lokal Anda,<br /><span>Tanpa Ribet</span>",
@@ -169,7 +169,7 @@ window.localixTranslations = {
     "price-grp-dist-li1": "Installer NSIS",
     "price-grp-dist-li2": "Build portabel",
     "price-grp-dist-li3": "Checksum SHA256",
-    "price-grp-dist-li4": "Lisensi MIT",
+    "price-grp-dist-li4": "Lisensi freeware (gratis)",
 
     "why-free-eyebrow": "Filosofi",
     "why-free-title": "Mengapa gratis?",
@@ -187,7 +187,7 @@ window.localixTranslations = {
     "price-faq-q2": "Apakah ada fitur yang dibatasi atau disembunyikan?",
     "price-faq-a2": "Tidak ada sama sekali. Semua fitur mulai dari Virtual Host hingga instalasi Laravel otomatis terbuka sepenuhnya tanpa paywall atau batasan waktu, sehingga proses belajar Anda tidak akan terhambat.",
     "price-faq-q3": "Bagaimana cara saya mendukung proyek gratis ini?",
-    "price-faq-a3": "Localix dikembangkan secara independen di waktu luang sebagai bentuk kontribusi open-source. Anda bisa mendukung kami dengan memberikan star di repositori GitHub, melaporkan bug, atau membagikannya kepada teman yang sedang belajar coding.",
+    "price-faq-a3": "Localix dikembangkan secara independen di waktu luang. Anda bisa mendukung kami dengan memberikan star di repositori GitHub, melaporkan bug, atau membagikannya kepada teman yang sedang belajar coding.",
 
     // Changelog page
     "change-hero-title": "Riwayat Rilis",
@@ -326,7 +326,7 @@ window.localixTranslations = {
 
     "docs-ss-title": "Windows Defender SmartScreen",
     "docs-ss-p1": "Karena installer ini tidak ditandatangani dengan sertifikat digital penerbit resmi (unsigned), Windows Defender SmartScreen mungkin menampilkan dialog proteksi bertuliskan <em>\"Windows protected your PC\"</em>.",
-    "docs-ss-p2": "Tampilan tersebut normal muncul untuk program baru yang belum membangun reputasi global di server keamanan Microsoft. Aplikasi ini sepenuhnya open source dan bebas dari malware.",
+    "docs-ss-p2": "Tampilan tersebut normal muncul untuk program baru yang belum membangun reputasi global di server keamanan Microsoft. Aplikasi ini aman dan bebas malware selama diunduh dari halaman rilis resmi.",
     "docs-ss-steps": "Cara melanjutkan instalasi dengan aman:",
     "docs-ss-li1": "Klik opsi teks <strong>More info</strong> pada dialog SmartScreen yang muncul.",
     "docs-ss-li2": "Klik tombol <strong>Run anyway</strong> di bagian bawah untuk memulai instalasi.",
@@ -379,7 +379,7 @@ window.localixTranslations = {
     "footer-faq": "FAQ",
     "footer-releases": "Releases",
     "footer-issues": "Issues",
-    "footer-copyright": "© 2025 Localix. Released under MIT License.",
+    "footer-copyright": "© 2025 Localix. Free to use.",
 
     // Index page
     "hero-title": "Your Local Dev Stack,<br /><span>Done Right</span>",
@@ -530,7 +530,7 @@ window.localixTranslations = {
     "price-grp-dist-li1": "NSIS installer",
     "price-grp-dist-li2": "Portable build",
     "price-grp-dist-li3": "SHA256 checksums",
-    "price-grp-dist-li4": "MIT License",
+    "price-grp-dist-li4": "Freeware license (free)",
 
     "why-free-eyebrow": "Philosophy",
     "why-free-title": "Why is it free?",
@@ -548,7 +548,7 @@ window.localixTranslations = {
     "price-faq-q2": "Are any features restricted or hidden?",
     "price-faq-a2": "Not at all. Every feature from Virtual Hosts to automatic Laravel installation is fully unlocked with no paywalls or time limits, ensuring your learning process is never hindered.",
     "price-faq-q3": "How can I support this free project?",
-    "price-faq-a3": "Localix is developed independently in spare time as an open-source contribution. You can support us by starring our GitHub repository, reporting bugs, or sharing it with friends who are learning to code.",
+    "price-faq-a3": "Localix is developed independently in spare time. You can support us by starring our GitHub repository, reporting bugs, or sharing it with friends who are learning to code.",
 
     // Changelog page
     "change-hero-title": "Changelog",
@@ -687,7 +687,7 @@ window.localixTranslations = {
 
     "docs-ss-title": "SmartScreen Warning",
     "docs-ss-p1": "Because the installer is unsigned, Windows Defender SmartScreen may display a blue warning saying <em>\"Windows protected your PC\"</em> on first run.",
-    "docs-ss-p2": "This is standard behavior for new releases without an established reputation history on Microsoft's servers. The project is completely open source and safe.",
+    "docs-ss-p2": "This is standard behavior for new releases without an established reputation history on Microsoft's servers. The app is safe and free of malware when downloaded from the official releases page.",
     "docs-ss-steps": "To bypass the warning:",
     "docs-ss-li1": "Click <strong>More info</strong> on the prompt.",
     "docs-ss-li2": "Click <strong>Run anyway</strong> at the bottom.",
